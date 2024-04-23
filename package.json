@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "dev": "vite --host localhost --port 4000"
+  },
+  "devDependencies": {
+    "vite": "^5.2.10"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "node": "^18.20.2",
+    "typescript": "^5.4.5"    
+  }
+}
