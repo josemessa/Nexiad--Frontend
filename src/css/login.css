@@ -1,0 +1,58 @@
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  background-color: rgb(206, 206, 206);
+}
+img {
+  height: 150px;
+  padding-top: 20px;
+}
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  height: auto;
+  flex-direction: column;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 50px;
+
+  .email-box {
+    display: flex;
+    flex-direction: column;
+    #email {
+      padding-block: 5px;
+    }
+  }
+  .pass-box {
+    display: flex;
+    flex-direction: column;
+    #password {
+      padding-block: 5px;
+    }
+  }
+  .login-button {
+    width: 50%;
+    margin-inline: auto;
+    margin-top: 20px;
+    background-color: yellow;
+    padding-block: 10px;
+    font-weight: 700;
+    border-radius: 5px;
+  }
+  .suscribe {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 25px;
+  }
+}
