@@ -7,21 +7,45 @@
     background-color: rgb(206, 206, 206);
   }
 
-/* Estilos para la tabla */
-.user-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
 
-  .user-table th, .user-table td {
-    border: 2px solid #1a1a1a;
-    padding: 8px;
-    text-align: left;
-  }
+/* Estilo de la tabla */
+.row {
+  border-bottom: 3px solid #ddd; 
+  border-radius: 8px;
+}
 
-  .user-table th {
-    background-color: rgb(181, 180, 180);
-  }
+
+thead th {
+  background-color: #f4efef;
+}
+
+
+table {
+  border-collapse: collapse; 
+  width: 100wh; 
+}
+
+
+td {
+  padding: 10px 50px; 
+  text-align: center; 
+  background-color: white;
+}
+
+
+th {
+  padding: 8px;
+}
 
  
+@media only screen and (max-width: 600px) {
+  table {
+    width: 100vw; 
+    font-size: 12px;
+  }
+
+  td, th {
+    padding: 5px;
+  }
+}
 
