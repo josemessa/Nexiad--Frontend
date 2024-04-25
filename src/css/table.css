@@ -1,0 +1,27 @@
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #1a1a1a;
+    background-color: rgb(206, 206, 206);
+  }
+
+/* Estilos para la tabla */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .user-table th, .user-table td {
+    border: 2px solid #1a1a1a;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .user-table th {
+    background-color: rgb(181, 180, 180);
+  }
+
+ 
+

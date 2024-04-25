@@ -1,12 +1,12 @@
-.main-section {
+/* .main-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   color: white;
   background-color: rgb(206, 206, 206);
-}
-img {
+} */
+/* img {
   height: 150px;
   padding-top: 20px;
 }
@@ -55,4 +55,4 @@ img {
     width: 100%;
     gap: 25px;
   }
-}
+} */
