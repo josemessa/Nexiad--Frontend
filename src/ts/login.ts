@@ -1,4 +1,7 @@
+import { loginButtonListener } from "./events/login"
+
 export function loginPage(){
+  
     const pageElement: any = document.getElementById("app")
     pageElement.innerHTML=`<div class="main-section">
     <div class="login-box">
@@ -11,11 +14,11 @@ export function loginPage(){
        <div class="pass-box"><label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" placeholder="Escribe aqui tu contraseña" required>
       </div> 
-        <input class="login-button" type="submit" value="Login">
+        <input class="login-button" id="login-button" type="button" value="Login">
         <div class="suscribe"><p>Aun no disfrutas de nuestras ventajas?</p><a href="#">Suscribete aquí</a></div>
     </form>
 
     </div>
-    </div>`    
+    </div>`   
+    loginButtonListener() 
 }
-
