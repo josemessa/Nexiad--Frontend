@@ -1,0 +1,26 @@
+#user-list, #user-details {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#user-list {
+    width: 30%;
+    float: left;
+}
+
+#user-details {
+    width: 65%;
+    float: right;
+}
+
+.user-item {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.user-item:hover {
+    background-color: #f4f4f4;
+}
