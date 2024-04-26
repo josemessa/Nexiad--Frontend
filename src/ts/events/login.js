@@ -1,3 +1,6 @@
+import { adminPage } from "../adminPage";
+import { userPage } from "../userPage";
+
 export function loginButtonListener() {
   const loginButton = document.getElementById("login-button");
   if (loginButton) {
@@ -24,7 +27,25 @@ export function loginButtonListener() {
               }),
             });
             const data = await response.json();
-            console.log(data);
+            console.log(data)
+            
+            if (data.token) {
+              const token=localStorage.setItem("token", data.token);
+              const tokenRefresh =localStorage.setItem("tokenRefresh", data.token);
+              console.log("token guardado en local-storage")
+              console.log("tokenRefresh guardado en local-storage") 
+
+            } else {
+              // Manejo de errores de respuesta
+              console.log("Error en la respuesta:", data.message);
+            }
+            if(data.data.role==="admin"){
+              console.log("admin access")
+              adminPage()
+            }else if(data.data.role==="user"){
+              console.log("user access")
+              userPage()
+            }
           } catch (error) {
             console.error("error", error);
           }

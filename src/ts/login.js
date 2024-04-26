@@ -2,7 +2,7 @@ import { loginButtonListener } from "./events/login"
 
 export function loginPage(){
   
-    const pageElement: any = document.getElementById("app")
+    const pageElement= document.getElementById("app")
     pageElement.innerHTML=`<div class="main-section">
     <div class="login-box">
       <img class="logo-login" src="nexiatransp.png" alt="">
