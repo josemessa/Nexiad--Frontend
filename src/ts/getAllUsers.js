@@ -1,3 +1,5 @@
+export function getAllUsers(){
+
 fetch('http://localhost:3000/user/getusers')
   .then(response => {
     if (response.ok) {
@@ -31,3 +33,4 @@ fetch('http://localhost:3000/user/getusers')
   .catch(error => {
     console.error('Hubo un problema con la solicitud:', error);
   });
+}
