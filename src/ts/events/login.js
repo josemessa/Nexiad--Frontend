@@ -12,7 +12,7 @@ export function loginButtonListener() {
       if (emailInput && passwordInput) {
         const emailValue = emailInput.value;
         const passwordValue = passwordInput.value;
-        if (emailValue && emailInput) {
+        if (emailValue && passwordValue) {
           console.log(emailValue);
           console.log(passwordValue);
           try {
