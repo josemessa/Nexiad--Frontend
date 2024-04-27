@@ -7,45 +7,19 @@
     background-color: rgb(206, 206, 206);
   }
 
+  .user {
+    display: flex;
+    border: 1px solid white;
+    width: 100%;
 
-/* Estilo de la tabla */
-.row {
-  border-bottom: 3px solid #ddd; 
-  border-radius: 8px;
-}
-
-
-thead th {
-  background-color: #f4efef;
-}
-
-
-table {
-  border-collapse: collapse; 
-  width: 100wh; 
-}
-
-
-td {
-  padding: 10px 50px; 
-  text-align: center; 
-  background-color: white;
-}
-
-
-th {
-  padding: 8px;
-}
-
- 
-@media only screen and (max-width: 600px) {
-  table {
-    width: 100vw; 
-    font-size: 12px;
   }
-
-  td, th {
-    padding: 5px;
+  
+  .user div {
+    display: flex;
+    padding: 15px 30px;
+    text-align: right;
   }
-}
+  
+  
+
 
