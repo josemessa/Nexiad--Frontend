@@ -1,14 +1,10 @@
-/* .main-section {
+ .main-section {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   color: white;
   background-color: rgb(206, 206, 206);
-} */
-/* img {
-  height: 150px;
-  padding-top: 20px;
 }
 .login-box {
   display: flex;
@@ -18,6 +14,10 @@
   background-color: #1a1a1a;
   height: auto;
   flex-direction: column;
+  img {
+    height: 150px;
+    padding-top: 20px;
+  }
 }
 .login-form {
   display: flex;
@@ -55,4 +55,4 @@
     width: 100%;
     gap: 25px;
   }
-} */
+} 
