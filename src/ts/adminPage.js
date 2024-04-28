@@ -16,7 +16,8 @@ export function adminPage(){
       <h3 class="tool-user-list"><a href="#" id="get-all-users">Users</a></h3>
       </div>
       </div>
-      <div class="list_box" id="user_list_box"></div>
+      <div class="list_box" id="user_list_box">
+      </div>
     </div>
     </main>
     <footer></footer>`

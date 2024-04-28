@@ -1,7 +1,7 @@
 .header-bar {
     display: flex;
     align-items: center;
-    height: 150px;
+    height: 20vh;
     background-color: rgb(88, 88, 88);
     img {
         padding-inline-start: 45px;
@@ -16,9 +16,8 @@
   .main-control-box {
     display: flex;
     justify-content: center;
-    position: fixed;
     width: 20%;
-    height: 100vh;
+    height: 80vh;
     background-color: rgb(88, 88, 88);;
     border-radius: -15px;
     .main-control {

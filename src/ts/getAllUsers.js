@@ -11,16 +11,23 @@ fetch('http://localhost:3000/user/getusers')
     const usersData = data.data;
     console.log(usersData);
 
-    // Genera el HTML usando los datos de 'usersData'
-    const html = usersData.map(userData => `
-      <div class="user">
-        <div>${userData.id}</div>
-        <div>${userData.firstname}</div>
-        <div>${userData.surname}</div>
-        <div>${userData.birthdate}</div>
-        <div>${userData.email}</div>
-      </div>
-    `).join('');
+    const html = usersData.map(userData => {
+      let subscriptionClass = "";
+    
+      if (userData.subscription === "premium") {
+        subscriptionClass = "premium"; 
+      } else if (userData.subscription === "basic") {
+        subscriptionClass = "basic"; 
+      }
+    
+      return `
+        <div class="user ${subscriptionClass}">
+          <div class="name">${userData.firstname}</div>
+          <div class="name">${userData.surname}</div>
+          <div id="subscription" class="${subscriptionClass}">${userData.subscription}</div>
+        </div>
+      `;
+    }).join('');
 
     const containerUsers = document.getElementById('user_list_box');
 
@@ -28,6 +35,7 @@ fetch('http://localhost:3000/user/getusers')
       console.log("El elemento containerUsers no fue encontrado");
     } else {
       containerUsers.innerHTML = html;
+
     }
   })
   .catch(error => {
