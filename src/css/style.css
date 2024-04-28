@@ -1,6 +1,12 @@
 @import url("login.css");
 @import url("adminPage.css");
+@import url("table.css");
 html {
   font-family: "Albert Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
