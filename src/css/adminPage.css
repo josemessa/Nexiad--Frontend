@@ -8,15 +8,9 @@
       height: 120px;
     }
   }
-  .body-app {
-    display: flex;
-  }
-
-
   .main-control-box {
     display: flex;
     justify-content: center;
-    position: fixed;
     width: 20%;
     height: 100vh;
     background-color: rgb(88, 88, 88);;
