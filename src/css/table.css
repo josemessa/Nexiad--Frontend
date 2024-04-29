@@ -1,23 +1,19 @@
-
-
 .user {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   border-radius: 10px;
-  border-top: 3px solid white;
-  border-left: 6px solid white;
-  border-right: 6px solid white;
-  border-bottom: 3px solid white;
+  margin: 15px;
+  padding: 10px;
   width: 100%;
   overflow: hidden;
   background-color: rgb(183, 181, 181);
+  filter: drop-shadow(4px 4px 4px rgb(76, 76, 76));
 }
 
-.list_box{
+.list_box {
   overflow-x: hidden;
   max-height: 80vh;
   width: 100%;
-
 }
 
 .tool-user-list {
@@ -31,40 +27,40 @@
   color: white;
 }
 
-.user div {
-  display: flex;
-  padding: 15px 30px;
-  margin: 0px 20px;
-  text-align: right;
-  margin: auto;
+.surname {
+  padding-left: 30px;
+  width: 30%;
 }
 
 .name {
   color: black;
+  width: 15%;
+}
+#subscription {
+  margin-left: 30%;
+  padding: 5px;
 }
 
-
 .premium {
-  border: 1px solid yellow;
   border-radius: 4px;
-  padding: 8px 16px;
   text-align: center;
+  background-color: rgb(221, 221, 91);
 }
 
 .basic {
-  border: 1px solid blue;
+  display: flex;
+
+  background-color: rgb(101, 101, 251);
   border-radius: 4px;
-  padding: 8px 16px;
+
   text-align: center;
 }
 
-
-
 @media (max-width: 868px) {
   .user div {
-      padding: 0 0;
-      margin: 0px 0px;
-      height: 40px;
-      font-size: 15px; 
+    padding: 0 0;
+    margin: 0px 0px;
+    height: 40px;
+    font-size: 15px;
   }
 }

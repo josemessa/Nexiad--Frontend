@@ -1,45 +1,64 @@
+export function getAllUsers() {
+  const authToken = localStorage.getItem("token");
 
-export function getAllUsers(){
+  if (!authToken) {
+    console.error(
+      "No se encontró un token de autenticación. Inicie sesión para obtener acceso."
+    );
+    return;
+  }
 
-  fetch('http://localhost:3000/user/getusers')
-    .then(response => {
-      if (response.ok) {
-        return response.json();
+  fetch("http://localhost:3000/user/getusers", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "auth-token": authToken,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
       }
-      throw new Error('Network response was not ok.');
+
+      return response.json();
     })
-    .then(data => {
+    .then((data) => {
+      if (!Array.isArray(data.data)) {
+        console.error("Expected an array of user data, but received:", data);
+        return;
+      }
+
       const usersData = data.data;
-      console.log(usersData);
-  
-      const html = usersData.map(userData => {
-        let subscriptionClass = "";
-      
-        if (userData.subscription === "premium") {
-          subscriptionClass = "premium"; 
-        } else if (userData.subscription === "basic") {
-          subscriptionClass = "basic"; 
-        }
-      
-        return `
+
+      const html = usersData
+        .map((userData) => {
+          let subscriptionClass = "";
+          if (userData.subscription === "premium") {
+            subscriptionClass = "premium";
+          } else if (userData.subscription === "basic") {
+            subscriptionClass = "basic";
+          }
+
+          return `
           <div class="user">
-            <div class="name">${userData.firstname}</div>
-            <div class="name">${userData.surname}</div>
-            <div id="subscription" class="${subscriptionClass}">${userData.subscription}</div>
+            <div class="surname"><b>Apellidos:</b> ${userData.surname}</div>
+            <div class="name"><b>Nombre:</b> ${userData.firstname}</div>
+            <div id="subscription" class="${subscriptionClass}"><b>${userData.subscription}</b></div>
           </div>
         `;
-      }).join('');
-  
-      const containerUsers = document.getElementById('user_list_box');
-  
+        })
+        .join("");
+
+      const containerUsers = document.getElementById("user_list_box");
+
       if (!containerUsers) {
-        console.log("El elemento containerUsers no fue encontrado");
-      } else {
-        containerUsers.innerHTML = html;
-  
+        console.error("El elemento containerUsers no fue encontrado");
+        return;
       }
+
+      containerUsers.innerHTML = html;
     })
-    .catch(error => {
-      console.error('Hubo un problema con la solicitud:', error);
+    .catch((error) => {
+      console.error("Hubo un problema con la solicitud:", error);
     });
-  }
+}
