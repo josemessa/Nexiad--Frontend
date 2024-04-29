@@ -27,8 +27,9 @@ export function loginButtonListener() {
               }),
             });
             const data = await response.json();
-            console.log(data)
-            
+            console.log(data.data.firstname)
+            const welcomeName= data.data.firstname
+            const welcomeSurname=data.data.surname
             if (data.token) {
               const token=localStorage.setItem("token", data.token);
               const tokenRefresh =localStorage.setItem("tokenRefresh", data.token);
@@ -41,10 +42,10 @@ export function loginButtonListener() {
             }
             if(data.data.role==="admin"){
               console.log("admin access")
-              adminPage()
+              adminPage(welcomeName, welcomeSurname)
             }else if(data.data.role==="user"){
               console.log("user access")
-              userPage()
+              userPage(welcomeName, welcomeSurname)
             }
           } catch (error) {
             console.error("error", error);

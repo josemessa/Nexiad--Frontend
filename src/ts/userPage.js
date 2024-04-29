@@ -1,10 +1,10 @@
 
-export function userPage(){  
+export function userPage(userName, userSurname){  
     const pageElement= document.getElementById("app")
     pageElement.innerHTML=""
     pageElement.innerHTML=`<header>
     <div class="header-bar">
-      <img src="nexiatransp.png" alt=""><h2>USER DASHBOARD</h2>
+    <img src="nexiatransp.png" alt=""><div class="user-line"><h2 class="page-title">ADMIN DASHBOARD</h2><h3>Admin: ${userName} ${userSurname}</h3></div>
     </div>
     </header>
     <main>
