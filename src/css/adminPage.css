@@ -16,7 +16,7 @@
   .main-control-box {
     display: flex;
     justify-content: center;
-    position: fixed;
+    /* position: fixed;  quita position fixed */
     width: 20%;
     height: 100vh;
     background-color: rgb(88, 88, 88);;
