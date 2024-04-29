@@ -1,6 +1,7 @@
 .user {
   display: flex;
   justify-content: start;
+  align-items: center;
   border-radius: 10px;
   margin: 15px;
   padding: 10px;
