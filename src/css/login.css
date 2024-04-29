@@ -14,6 +14,7 @@
   background-color: #1a1a1a;
   height: auto;
   flex-direction: column;
+  filter: drop-shadow(15px 15px 5px rgb(76, 76, 76));
   img {
     height: 150px;
     padding-top: 20px;
@@ -54,5 +55,22 @@
     align-items: center;
     width: 100%;
     gap: 25px;
+    .subscribe-button{
+      color: rgb(27, 27, 248);
+      &:hover{
+        color:yellow;
+      }
+    }
   }
+}
+
+@media (max-height: 500px){
+  .login-box {
+    flex-direction: row;
+    img{
+      padding: 5%;
+    }
+  }
+
+
 }

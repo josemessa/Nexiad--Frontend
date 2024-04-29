@@ -1,8 +1,9 @@
 .header-bar {
     display: flex;
     align-items: center;
-    height: 150px;
-    background-color: rgb(88, 88, 88);
+    height: 20vh;
+    background-color: rgb(149, 149, 149);
+    justify-content: space-between;
     img {
         padding-inline-start: 45px;
       height: 120px;
@@ -11,21 +12,54 @@
   .body-app {
     display: flex;
   }
+  .welcome{
+    background-color: rgb(208, 208, 208);
+    margin: 50px;
+    font-size: 40px;
+    border-radius: 5px;
+    padding-block: 25px;
+    padding-inline: 10px;
+    filter: drop-shadow(15px 15px 5px rgb(76, 76, 76));
+    .welcome-message{
+      animation: appear 5s forwards;     
+      
+    }
+   .page-message{
+    opacity:0;
+    animation: appear 5s forwards;
+    animation-delay: 3s;
+   }
+  }
+  @keyframes appear{
 
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+  .user-line{
+    width: 30%;
+    color: rgb(55, 55, 55);
+    .page-title{
+      margin-right: 5%;
+  
+    }
+  }
 
   .main-control-box {
     display: flex;
     justify-content: center;
-    /* position: fixed;  quita position fixed */
     width: 20%;
-    height: 100vh;
-    background-color: rgb(88, 88, 88);;
+    height: 80vh;
+    background-color: rgb(149, 149, 149);
     border-radius: -15px;
     .main-control {
       height: 95%;
       width: 80%;
       border-radius: 12px;
-      background-color: rgb(59, 59, 59);
+      background-color: rgb(114, 113, 113);
       .tools {
         color: rgb(255, 208, 0);
         padding-left: 15%;
