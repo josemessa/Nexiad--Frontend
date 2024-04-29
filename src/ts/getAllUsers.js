@@ -1,54 +1,64 @@
 export function getAllUsers() {
-  // Obtener el token de autenticación del localStorage
-  const authToken = localStorage.getItem('token');
+  const authToken = localStorage.getItem("token");
 
-  // Verifica si el token existe antes de hacer la solicitud
   if (!authToken) {
-      console.error('No se encontró un token de autenticación. Inicie sesión para obtener acceso.');
-      return;
+    console.error(
+      "No se encontró un token de autenticación. Inicie sesión para obtener acceso."
+    );
+    return;
   }
 
-  fetch('http://localhost:3000/user/getusers', {
-      method: 'GET',
-      headers: {
-          'Content-Type': 'application/json',
-          'auth-token': `${authToken}` 
-      }
+  fetch("http://localhost:3000/user/getusers", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "auth-token": authToken,
+    },
   })
-  .then(response => {
-      if (response.ok) {
-          return response.json();
-      } else {
-          throw new Error(`Error en la respuesta de la red: ${response.status} ${response.statusText}`);
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Error: ${response.statusText}`);
       }
-  })
-  .then(data => {
-      if (data && data.data) {
-          const usersData = data.data;
 
-          // Generar HTML usando los datos de 'usersData'
-          const html = usersData.map(userData => `
-              <div class="user">
-                  <div>${userData.id}</div>
-                  <div>${userData.firstname}</div>
-                  <div>${userData.surname}</div>
-                  <div>${userData.birthdate}</div>
-                  <div>${userData.email}</div>
-              </div>
-          `).join('');
+      return response.json();
+    })
+    .then((data) => {
+      if (!Array.isArray(data.data)) {
+        console.error("Expected an array of user data, but received:", data);
+        return;
+      }
 
-          // Insertar el HTML generado en el contenedor
-          const containerUsers = document.getElementById('user_list_box');
-          if (containerUsers) {
-              containerUsers.innerHTML = html;
-          } else {
-              console.error('El contenedor de usuarios no fue encontrado.');
+      const usersData = data.data;
+
+      const html = usersData
+        .map((userData) => {
+          let subscriptionClass = "";
+          if (userData.subscription === "premium") {
+            subscriptionClass = "premium";
+          } else if (userData.subscription === "basic") {
+            subscriptionClass = "basic";
           }
-      } else {
-          console.error('La respuesta no contiene los datos esperados.');
+
+          return `
+          <div class="user">
+            <div class="surname"><b>Apellidos:</b> ${userData.surname}</div>
+            <div class="name"><b>Nombre:</b> ${userData.firstname}</div>
+            <div id="subscription" class="${subscriptionClass}"><b>${userData.subscription}</b></div>
+          </div>
+        `;
+        })
+        .join("");
+
+      const containerUsers = document.getElementById("user_list_box");
+
+      if (!containerUsers) {
+        console.error("El elemento containerUsers no fue encontrado");
+        return;
       }
-  })
-  .catch(error => {
-      console.error('Hubo un problema con la solicitud:', error);
-  });
+
+      containerUsers.innerHTML = html;
+    })
+    .catch((error) => {
+      console.error("Hubo un problema con la solicitud:", error);
+    });
 }
