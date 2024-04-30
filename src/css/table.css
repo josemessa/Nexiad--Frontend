@@ -7,8 +7,8 @@
   padding: 10px;
   width: 100%;
   overflow: hidden;
-  background-color: rgb(183, 181, 181);
-  filter: drop-shadow(4px 4px 4px rgb(76, 76, 76));
+  background-color: rgb(255, 255, 255);
+  filter: drop-shadow(4px 4px 4px rgb(124, 124, 124));
 }
 
 .list_box {

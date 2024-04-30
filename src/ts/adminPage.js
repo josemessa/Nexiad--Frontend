@@ -6,7 +6,7 @@ export function adminPage(userName, userSurname){
     pageElement.innerHTML=""
     pageElement.innerHTML=`<header>
     <div class="header-bar">
-      <img src="nexiatransp.png" alt=""><div class="user-line"><h2 class="page-title">ADMIN DASHBOARD</h2><h3>Admin: ${userName} ${userSurname}</h3></div>
+      <img src="nexiatranspblack.png" alt=""><div class="user-line"><h2 class="page-title">ADMIN DASHBOARD</h2><h3>Admin: ${userName} ${userSurname}</h3></div>
     </div>
     </header>
     <main>

@@ -56,9 +56,10 @@
     width: 100%;
     gap: 25px;
     .subscribe-button{
-      color: rgb(27, 27, 248);
+      color:yellow;
+
       &:hover{
-        color:yellow;
+        color: rgb(27, 27, 248);
       }
     }
   }

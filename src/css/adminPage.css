@@ -1,8 +1,9 @@
 .header-bar {
     display: flex;
     align-items: center;
+    background-color: rgb(182, 182, 182);
     height: 20vh;
-    background-color: rgb(149, 149, 149);
+    border-bottom: 2px SOLID grey;
     justify-content: space-between;
     img {
         padding-inline-start: 45px;
@@ -13,7 +14,6 @@
     display: flex;
   }
   .welcome{
-    background-color: rgb(208, 208, 208);
     margin: 50px;
     font-size: 40px;
     border-radius: 5px;
@@ -53,13 +53,14 @@
     justify-content: center;
     width: 20%;
     height: 80vh;
-    background-color: rgb(149, 149, 149);
+  
     border-radius: -15px;
     .main-control {
+      margin-top: 5%;
       height: 95%;
       width: 80%;
       border-radius: 12px;
-      background-color: rgb(114, 113, 113);
+      background-color: rgb(182, 182, 182);
       .tools {
         color: rgb(255, 208, 0);
         padding-left: 15%;
