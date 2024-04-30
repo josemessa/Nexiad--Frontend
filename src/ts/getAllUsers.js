@@ -30,8 +30,7 @@ export function getAllUsers() {
 
       const usersData = data.data;
 
-      const html = usersData
-        .map((userData) => {
+      const html = usersData.map((userData) => {
           let subscriptionClass = "";
           if (userData.subscription === "premium") {
             subscriptionClass = "premium";
