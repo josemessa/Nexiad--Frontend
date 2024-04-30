@@ -45,15 +45,13 @@
 .premium {
   border-radius: 4px;
   text-align: center;
-  background-color: rgb(221, 221, 91);
+  background-color: #f9f45d;
 }
 
 .basic {
   display: flex;
-
-  background-color: rgb(101, 101, 251);
+  background-color: #047cfc;
   border-radius: 4px;
-
   text-align: center;
 }
 
