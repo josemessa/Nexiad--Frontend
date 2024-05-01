@@ -1,0 +1,48 @@
+.register-title{
+    font-size: 40px;
+    margin-inline: 5vw;
+    margin-block: 10vh;
+}
+.register-box{
+    text-decoration: solid;
+    margin-left: 5vw;
+    .user-form{
+        display: flex ;
+        flex-direction: column;
+        gap: 2vh;
+    }
+}
+.firstname-surname{
+    display: flex;
+    gap: 5vw
+
+}
+#firstname{
+    width: 15vw;
+}
+#surname{
+    width: 15vw;
+
+}
+
+.email-password{
+    display: flex;
+    gap: 5vw;
+    #email{
+        width: 15vw;
+    }
+    #password{
+        width: 10vw;
+    }
+}
+.login-button{
+    width: fit-content;
+
+    padding: 5px;
+    margin-top: 20px;
+    background-color: yellow;
+    border-radius: 5px;
+    padding-block: 10px;
+    font-weight: 700;
+
+}

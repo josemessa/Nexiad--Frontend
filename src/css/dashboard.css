@@ -2,14 +2,21 @@ main {
   display: flex;
   background-color: rgb(234, 234, 234);
 }
+.tools-bar{
+  display:block;
+  width: 50%;
+  justify-content: space-between;
+}
 .top-bar {
   display: flex;
   font-size: 12px;
   justify-content: end;
   margin-bottom: 20px;
+  margin-right: 5%;
 }
 .tool{
   display: flex;
+  justify-content: space-between;
   gap:20px;
   align-items: center;
   margin-top: 20px;
@@ -35,7 +42,6 @@ main {
 .welcome {
   margin: 50px;
   font-size: 40px;
-  border-radius: 5px;
   padding-block: 25px;
   padding-inline: 10px;
 
@@ -56,3 +62,4 @@ main {
     opacity: 1;
   }
 }
+

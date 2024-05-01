@@ -14,7 +14,7 @@
   background-color: #1a1a1a;
   height: auto;
   flex-direction: column;
-  filter: drop-shadow(15px 15px 5px rgb(76, 76, 76));
+
   img {
     height: 150px;
     padding-top: 20px;
@@ -45,9 +45,9 @@
     margin-inline: auto;
     margin-top: 20px;
     background-color: yellow;
+    border-radius: 5px;
     padding-block: 10px;
     font-weight: 700;
-    border-radius: 5px;
   }
   .suscribe {
     display: flex;
