@@ -1,0 +1,58 @@
+main {
+  display: flex;
+  background-color: rgb(234, 234, 234);
+}
+.top-bar {
+  display: flex;
+  font-size: 12px;
+  justify-content: end;
+  margin-bottom: 20px;
+}
+.tool{
+  display: flex;
+  gap:20px;
+  align-items: center;
+  margin-top: 20px;
+}
+.dashboard {
+  display: flex;
+  color: white;
+ 
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 20vw;
+
+  background-color: #1a1a1a;
+  .tools {
+    font-family: "Outfit";
+  }
+  img {
+    width: 60%;
+    margin-top:20px
+  }
+}
+.welcome {
+  margin: 50px;
+  font-size: 40px;
+  border-radius: 5px;
+  padding-block: 25px;
+  padding-inline: 10px;
+
+  .welcome-message {
+    animation: appear 5s forwards;
+  }
+  .page-message {
+    opacity: 0;
+    animation: appear 5s forwards;
+    animation-delay: 3s;
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
