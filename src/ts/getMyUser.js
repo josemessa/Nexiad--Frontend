@@ -31,16 +31,42 @@ export function getMyUser() {
         year: "numeric",
         month: "long",
         day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
       };
+
+      const colorMap = {
+        "A": "#3498db",
+        "B": "#2ecc71",
+        "C": "#f1c40f",
+        "D": "#e67e22",
+        "E": "#e74c3c",
+        "F": "#9b59b6",
+        "G": "#1abc9c",
+        "H": "#16a085",
+        "I": "#f39c12",
+        "J": "#c0392b",
+        "K": "#8e44ad",
+        "L": "#34495e",
+        "M": "#27ae60",
+        "N": "#2980b9",
+        "O": "#d35400",
+        "P": "#2c3e50",
+        "Q": "#f7dc6f",
+        "R": "#7f8c8d",
+        "S": "#16a085",
+        "T": "#e74c3c",
+        "U": "#95a5a6",
+        "V": "#1abc9c",
+        "W": "#f1c40f",
+        "X": "#9b59b6",
+        "Y": "#8e44ad",
+        "Z": "#3498db"
+      };
+      
+      const initial = myUser.firstname.charAt(0).toUpperCase();
+      const color = colorMap[initial] || getRandomColor(); 
 
       const formattedBirthdate = birthdate.toLocaleString("en-US", options);
       console.log(formattedBirthdate);
-
-      const color = getRandomColor(); // Función para generar un color aleatorio
-      const initial = myUser.firstname.charAt(0); // Obtener la primera letra del nombre
 
       const html = `<div class="div-my-user">
         <div class="container-name">
@@ -49,16 +75,18 @@ export function getMyUser() {
         </div>
           <div class="firstname">${myUser.firstname}</div>
           <div class="my-surname">${myUser.surname}</div>
+          <div class="subscription-name">${myUser.subscription}</div>
         </div>
         <div class="container-email">
-          <div class="email">${myUser.email}</div>
-          <div class="user-id">${myUser._id}</div>
+          <div class="email"><b>email:  </b>${myUser.email}</div>
+          <div class="numero"><b>numero:  </b>${myUser.numero}</div>
         </div>
-        <div class"container-adress">
-          <div class="adress"><p>Calle de la Luna, 15<br>28001 Madrid, Spain</p></div>
-          <div class="birthdate">${formattedBirthdate}</div>
+        <div class="user-id"><b>id:  </b>${myUser._id}</div>
+        <div class="container-adress">
+          <div class="adress"><b>direccion:</b>  ${myUser.direccion}</div>
+          <div class="birthdate"><b>fecha de nacimiento:</b>  ${formattedBirthdate}</div>
         </div>
-        <div id="my-subscription" class="${myUser.subscription}">${myUser.subscription}</div>
+        <div id="my-subscription" class="user-${myUser.subscription}">${myUser.subscription}</div>
       </div>`;
 
       console.log(html);
@@ -69,20 +97,4 @@ export function getMyUser() {
     });
 }
 
-function getRandomColor() {
-  const colors = [
-    "#3498db",
-    "#2ecc71", 
-    "#f1c40f", 
-    "#e67e22", 
-    "#e74c3c", 
-    "#9b59b6", 
-    "#1abc9c", 
-    "#16a085", 
-    "#f39c12",
-    "#c0392b", 
-  ];
-
-  return colors[Math.floor(Math.random() * colors.length)];
-}
 
