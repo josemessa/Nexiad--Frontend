@@ -1,3 +1,60 @@
-#container-my-user {
+
+.div-my-user {
+    width: 100vw; /* El div ocupará todo el ancho del viewport */
+    max-width: 80vw;
+    max-height: 80vh; /* Para limitar el ancho máximo del div */
+    background-color: #f8f9fa; /* Color de fondo similar al de AliExpress */
+    border: 1px solid #eaeaea; /* Borde similar al de AliExpress */
+    border-radius: 5px;
+    padding: 100px 50px;
+    margin: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra similar al de AliExpress */
+  }
+
+  .profile-image{
+    padding: 20px 27px;
+    font-weight: 600;
+    border: 3px solid rgb(186, 184, 184);
+    font-size: 30px;
+  }
+  
+  .container-name {
     display: flex;
-}
+    align-items: center;
+    justify-content: start;
+    font-size: 24px;
+    margin-bottom: 50px;
+    gap: 20px;
+  }
+  
+  .container-email {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  .email {
+    margin-right: 50px;
+  }
+
+  .container-adress{
+   padding-left: 170px;
+  }
+  
+  .address {
+    margin-bottom: 50px;
+    padding-left: 170px;
+  }
+  
+  .birthdate {
+    margin-bottom: 50px;
+  }
+  
+ .premium{
+    font-size: 30px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+  
