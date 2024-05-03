@@ -103,11 +103,13 @@
   font-weight: 600;
   background-color: #047cfc;
   color: #fdfdfd;
-  width: 200px;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   margin-left: 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
   
