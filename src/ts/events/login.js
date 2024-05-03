@@ -4,7 +4,7 @@ import { userPage } from "../userPage";
 export function loginButtonListener() {
   const loginButton = document.getElementById("login-button");
   if (loginButton) {
-    loginButton.addEventListener("click", async function (event) {
+    loginButton.addEventListener("click", async (event) =>{
       console.log("click");
 
       const emailInput = document.getElementById("email");
@@ -27,7 +27,7 @@ export function loginButtonListener() {
               }),
             });
             const data = await response.json();
-            console.log(data.data.firstname)
+          
             const welcomeName= data.data.firstname
             const welcomeSurname=data.data.surname
             if (data.token) {

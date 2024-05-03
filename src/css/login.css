@@ -4,7 +4,8 @@
   align-items: center;
   height: 100vh;
   color: white;
-  background-color: rgb(206, 206, 206);
+  background-image: url(/public/background.jpg);
+  background-size: cover;
 }
 .login-box {
   display: flex;

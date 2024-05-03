@@ -1,48 +1,88 @@
-.register-title{
-    font-size: 40px;
-    margin-inline: 5vw;
-    margin-block: 10vh;
+.register-title {
+  font-size: 40px;
+  margin-inline: 5vw;
+  margin-block: 10vh;
 }
-.register-box{
-    text-decoration: solid;
-    margin-left: 5vw;
-    .user-form{
-        display: flex ;
-        flex-direction: column;
-        gap: 2vh;
+.register-box {
+  text-decoration: solid;
+  margin-left: 5vw;
+  .user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
+}
+.firstname-surname {
+  display: flex;
+  gap: 5vw;
+}
+#firstname {
+  width: 15vw;
+}
+#surname {
+  width: 15vw;
+}
+.adress-city {
+  display: flex;
+  gap: 5vw;
+}
+#adress {
+  width: 15vw;
+}
+.email-password {
+  display: flex;
+  gap: 5vw;
+  #email {
+    width: 15vw;
+  }
+  #password {
+    width: 10vw;
+  }
+}
+.role-box {
+  margin-top: 5vh;
+}
+.admin-warning {
+  color: red;
+  width: 90%;
+  font-weight: 700;
+}
+.register-submit {
+  width: fit-content;
+  padding: 5px;
+  margin-top: 20px;
+  background-color: yellow;
+  border-radius: 5px;
+  padding-block: 10px;
+  font-weight: 700;
+}
+@media (max-width: 800px) {
+  .firstname-surname {
+    flex-direction: column;
+    #firstname {
+      width: 90%;
     }
-}
-.firstname-surname{
-    display: flex;
-    gap: 5vw
-
-}
-#firstname{
-    width: 15vw;
-}
-#surname{
-    width: 15vw;
-
-}
-
-.email-password{
-    display: flex;
+    #surname {
+      width: 90%;
+    }
+  }
+  .adress-city {
+    flex-direction: column;
+    #adress {
+      width: 90%;
+    }
+    #city {
+      width: 90%;
+    }
+  }
+  .email-password {
+    flex-direction: column;
     gap: 5vw;
-    #email{
-        width: 15vw;
+    #email {
+      width: 90%;
     }
-    #password{
-        width: 10vw;
+    #password {
+      width: 80%;
     }
-}
-.login-button{
-    width: fit-content;
-
-    padding: 5px;
-    margin-top: 20px;
-    background-color: yellow;
-    border-radius: 5px;
-    padding-block: 10px;
-    font-weight: 700;
-
+  }
 }
