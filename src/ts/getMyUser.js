@@ -79,14 +79,14 @@ export function getMyUser() {
         </div>
         <div class="container-email">
           <div class="email"><b>email:  </b>${myUser.email}</div>
-          <div class="numero"><b>numero:  </b>${myUser.numero}</div>
+          <div class="numero"><b>numero:  </b>${myUser.phone}</div>
         </div>
         <div class="user-id"><b>id:  </b>${myUser._id}</div>
         <div class="container-adress">
-          <div class="adress"><b>direccion:</b>  ${myUser.direccion}</div>
+          <div class="adress"><b>direccion:</b>  ${myUser.adress}</div>
           <div class="birthdate"><b>fecha de nacimiento:</b>  ${formattedBirthdate}</div>
         </div>
-        <div id="my-subscription" class="user-${myUser.subscription}">${myUser.subscription}</div>
+       
       </div>`;
 
       console.log(html);

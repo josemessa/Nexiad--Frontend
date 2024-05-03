@@ -37,12 +37,14 @@
     margin-bottom: 50px;
     padding-left: 10px;
   }
+
   
   .container-adress{
+    margin-top: 40px;
     background-color: rgb(234, 234, 234);
-    padding-left: 15px;
+    padding: 20px 40px;
     border-radius: 5px;
-    width: 40%;
+    width: 30%;
 
   }
 
@@ -73,15 +75,10 @@
   
   .adress {
     padding-bottom: 10px;
-    padding-top: 15px;
 
   }
   .birthdate{
-    padding-bottom: 15px;
-  }
-  
-  .birthdate {
-    margin-bottom: 50px;
+    padding-top: 20px;
   }
   
  .user-premium{
