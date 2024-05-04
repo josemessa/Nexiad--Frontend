@@ -9,7 +9,7 @@ export function userPage(userName, userSurname){
     </div> 
     <div class="app-space">
     <div class="top-bar">
-        <h3>Admin: ${userName} ${userSurname}</h3>
+        <h3>Usuario: ${userName} ${userSurname}</h3>
     </div>    
     
      <div class="list_box" id="user_list_box">

@@ -11,19 +11,14 @@
   
 }
 
-.list_box {
+.aplication-box {
   overflow-x: hidden;
   max-height: 90vh;
   width: 80vw;
  
 }
 
-.tool-user-list {
-  display: flex;
-  font-size: 25px;
-  font-family: "Exo";
-  justify-content: center;
-}
+
 
 .link:active {
   color: white;
