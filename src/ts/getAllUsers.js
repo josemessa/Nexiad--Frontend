@@ -1,3 +1,4 @@
+import { getUserById } from "../ts/getUserById";
 export function getAllUsers() {
   const authToken = localStorage.getItem("token");
 
@@ -39,7 +40,7 @@ export function getAllUsers() {
           }
 
           return `
-          <div class="user">
+          <div class="user" id="user" data-user-id="${userData._id}">
             <div class="surname"><b>Apellidos:</b> ${userData.surname}</div>
             <div class="name"><b>Nombre:</b> ${userData.firstname}</div>
             <div id="subscription" class="${subscriptionClass}"><b>${userData.subscription}</b></div>
@@ -56,6 +57,16 @@ export function getAllUsers() {
       }
 
       containerUsers.innerHTML = html;
+
+      const users = document.querySelectorAll('.user');
+
+      users.forEach(user => {
+        user.addEventListener('click', (event) => {
+            const userId = event.currentTarget.dataset.userId;
+            getUserById(userId);
+        });
+      });
+
     })
     .catch((error) => {
       console.error("Hubo un problema con la solicitud:", error);

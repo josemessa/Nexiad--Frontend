@@ -25,6 +25,17 @@ export function getMyUserlistener(){
     }
 }
 
+// export function getUserById(){
+//     const user = document.getElementById("user");
+//     if(user){
+//         user.addEventListener("click", (event) => {
+//             console.log(user._id)
+//         }
+//      ); 
+//     }
+
+// }
+
 export function addUserByAdminListener(){
     const getUsers = document.getElementById("add-user-by-admin");
 
