@@ -62,7 +62,7 @@ export function getAllUsers() {
 
       users.forEach(user => {
         user.addEventListener('click', (event) => {
-            const userId = event.currentTarget.dataset.userId;
+            const userId = event.target.dataset.userId;
             getUserById(userId);
         });
       });
