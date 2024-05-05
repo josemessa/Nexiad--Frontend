@@ -1,4 +1,6 @@
 import { getAllUserslistener, addUserByAdminListener } from "../ts/events/tools";
+import { getUserById } from "../ts/getUserById";
+
 
 export function adminPage(userName, userSurname) {
   const pageElement = document.getElementById("app");
@@ -30,5 +32,6 @@ export function adminPage(userName, userSurname) {
     </div>
    `;
   getAllUserslistener();
-  addUserByAdminListener()
+  addUserByAdminListener();
+  getUserById();
 }
