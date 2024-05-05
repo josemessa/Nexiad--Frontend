@@ -48,7 +48,7 @@ export function getAllUsers() {
         })
         .join("");
 
-      const containerUsers = document.getElementById("user_list_box");
+      const containerUsers = document.getElementById("aplication-box");
 
       if (!containerUsers) {
         console.error("El elemento containerUsers no fue encontrado");

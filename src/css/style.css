@@ -1,7 +1,9 @@
 @import url("login.css");
 @import url("dashboard.css");
-@import url("table.css");
 @import url("myUser.css");
+@import url("users-list.css");
+@import url("admin-register.css");
+
 html {
   font-family: "Albert Sans", sans-serif;
 }

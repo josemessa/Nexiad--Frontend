@@ -4,7 +4,8 @@
   align-items: center;
   height: 100vh;
   color: white;
-  background-color: rgb(206, 206, 206);
+  background-image: url(/public/background.jpg);
+  background-size: cover;
 }
 .login-box {
   display: flex;
@@ -14,7 +15,7 @@
   background-color: #1a1a1a;
   height: auto;
   flex-direction: column;
-  filter: drop-shadow(15px 15px 5px rgb(76, 76, 76));
+
   img {
     height: 150px;
     padding-top: 20px;
@@ -45,9 +46,9 @@
     margin-inline: auto;
     margin-top: 20px;
     background-color: yellow;
+    border-radius: 5px;
     padding-block: 10px;
     font-weight: 700;
-    border-radius: 5px;
   }
   .suscribe {
     display: flex;

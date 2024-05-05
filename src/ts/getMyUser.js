@@ -91,7 +91,7 @@ export function getMyUser() {
 
       console.log(html);
 
-      const containerMyUser = document.getElementById("container-my-user");
+      const containerMyUser = document.getElementById("aplication-box");
 
       containerMyUser.innerHTML = html;
     });

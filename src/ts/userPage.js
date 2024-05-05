@@ -1,4 +1,4 @@
-import { getMyUserlistener } from "./events/myUser";
+import { getMyUserlistener } from "./events/tools";
 
 export function userPage(userName, userSurname) {
   const pageElement = document.getElementById("app");
@@ -15,7 +15,7 @@ export function userPage(userName, userSurname) {
           <h3>User: ${userName} ${userSurname}</h3>
       </div>    
       
-       <div class="list_box" id="container-my-user">
+       <div class="aplication-box" id="aplication-box">
       <div class="welcome">
         <p class="welcome-message">Bienvenido a <b>Nexiad</b></h2>
         <p class="page-message">En nuestra plataforma podrás gestionar,consultar y editar los usuarios de tu plataforma</p>
