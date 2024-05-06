@@ -33,5 +33,4 @@ export function adminPage(userName, userSurname) {
    `;
   getAllUserslistener();
   addUserByAdminListener();
-  getUserById();
 }

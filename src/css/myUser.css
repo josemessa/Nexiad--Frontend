@@ -1,101 +1,125 @@
+.user-edit {
+  display: flex;
+  height: 80vh;
+  gap: 3%;
+  justify-content: center;
+  align-items: center;
+}
+.edit-tools {
+  display: flex;
+  gap: 20%;
+  flex-direction: column;
+  align-items: center;
 
-.div-my-user {
-    width: 100vw; /* El div ocupará todo el ancho del viewport */
-    max-width: 60vw;
-    max-height: 80vh; /* Para limitar el ancho máximo del div */
+
+
+  svg {
+    margin: 15px;
+    width: 50px;
+    height: 50px;
+    padding: 15px;
     background-color: #f8f9fa; /* Color de fondo similar al de AliExpress */
     border: 1px solid #eaeaea; /* Borde similar al de AliExpress */
     border-radius: 5px;
-    padding: 70px 0px;
-    padding-left: 10%;
-    margin: 50px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra similar al de AliExpress */
+    fill: grey;
+    :hover{
+      fill: red;
+    }
   }
+}
+.admin-disable-able{
+  height: 50px;
+}
+.div-my-user {
+  width: 50vw;
+  background-color: #f8f9fa; /* Color de fondo similar al de AliExpress */
+  border: 1px solid #eaeaea; /* Borde similar al de AliExpress */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra similar al de AliExpress */
+}
 
-  .profile-image{
-    padding: 5px 17px;
-    font-weight: 400;
-    font-size: 50px;
-    border-radius: 5px;
+.profile-image {
+  margin: 15px;
+  padding: 5px 17px;
+  font-weight: 400;
+  font-size: 50px;
+  border-radius: 5px;
+}
 
-  }
-  
-  .container-name {
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    justify-content: start;
-    font-size: 24px;
-    margin-bottom: 50px;
-    gap: 8px;
-    
-  }
-  
-  .container-email {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-    padding-left: 10px;
-  }
+.container-name {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  justify-content: start;
+  font-size: 24px;
+  margin-bottom: 50px;
+  gap: 8px;
+}
 
-  
-  .container-adress{
-    margin-top: 40px;
-    background-color: rgb(234, 234, 234);
-    padding: 20px 40px;
-    border-radius: 5px;
-    width: 30%;
+.container-email {
+  display: flex;
+  margin-bottom: 50px;
+  padding-left: 2vw;
+}
 
-  }
+.container-adress {
+  margin-top: 40px;
+  background-color: rgb(234, 234, 234);
+  margin: 20px;
 
-  .subscription-name{
-    margin-left: 15px;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 15px;
-    color: white;
-    background-color: rgb(216, 215, 215);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  padding: 20px;
+  border-radius: 5px;
+  width: 30vw;
+}
 
-  .firstname{
-    padding-left: 20px;
-  }
-  .email {
-    margin-right: 50px;
-  }
+.subscription-name {
+  margin-left: 15px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  color: white;
+  background-color: rgb(216, 215, 215);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .user-id{
-    padding-bottom: 20px;
-    padding-left: 10px;
-  }
-  
-  .adress {
-    padding-bottom: 10px;
+.firstname {
+  padding-left: 20px;
+}
+.email {
+  margin-right: 50px;
+}
 
-  }
-  .birthdate{
-    padding-top: 20px;
-  }
-  
- .user-premium{
-    font-size: 30px;
-    font-weight: 600;
-    background-color: #f9f45d;
-    border-radius: 8px;
-    color: #fdfdfd;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 5px;
-    margin-left: 5%;
- }
+.user-id {
+  padding-bottom: 20px;
+  padding-left: 2vw;
+}
 
- .user-basic{
+.adress {
+  padding-bottom: 10px;
+}
+.birthdate {
+  padding-top: 20px;
+}
+
+.user-premium {
+  font-size: 30px;
+  font-weight: 600;
+  background-color: #f9f45d;
+  border-radius: 8px;
+  color: #fdfdfd;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-left: 5%;
+}
+
+.user-basic {
   font-size: 25px;
   font-weight: 600;
   background-color: #047cfc;
@@ -109,4 +133,3 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
-  
