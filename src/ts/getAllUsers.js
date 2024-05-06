@@ -35,7 +35,9 @@ export function getAllUsers() {
           let subscriptionClass = "";
           if (userData.subscription === "premium") {
             subscriptionClass = "premium";
-          } else if (userData.subscription === "basic") {
+          }if (userData.subscription === "free") {
+            subscriptionClass = "free";
+          }  else if (userData.subscription === "basic") {
             subscriptionClass = "basic";
           }
 

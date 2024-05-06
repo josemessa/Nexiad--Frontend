@@ -4,7 +4,7 @@
   align-items: center;
   height: 100vh;
   color: white;
-  background-image: url(/public/background.jpg);
+  background-image: url(/background.jpg);
   background-size: cover;
 }
 .login-box {
