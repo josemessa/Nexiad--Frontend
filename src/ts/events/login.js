@@ -4,7 +4,7 @@ import { userPage } from "../userPage";
 export function loginButtonListener() {
   const loginButton = document.getElementById("login-button");
   if (loginButton) {
-    loginButton.addEventListener("click", async (event) =>{
+    loginButton.addEventListener("click", async (event) => {
       console.log("click");
 
       const emailInput = document.getElementById("email");
@@ -27,25 +27,25 @@ export function loginButtonListener() {
               }),
             });
             const data = await response.json();
-          
-            const welcomeName= data.data.firstname
-            const welcomeSurname=data.data.surname
-            if (data.token) {
-              const token=localStorage.setItem("token", data.token);
-              const tokenRefresh =localStorage.setItem("tokenRefresh", data.token);
-              console.log("token guardado en local-storage")
-              console.log("tokenRefresh guardado en local-storage") 
 
+            const welcomeName = data.data.firstname;
+            const welcomeSurname = data.data.surname;
+            if (data.token) {
+              const token = localStorage.setItem("token", data.token);
+              const tokenRefresh = localStorage.setItem(
+                "tokenRefresh",
+                data.token_refresh
+              );
             } else {
               // Manejo de errores de respuesta
               console.log("Error en la respuesta:", data.message);
             }
-            if(data.data.role==="admin"){
-              console.log("admin access")
-              adminPage(welcomeName, welcomeSurname)
-            }else if(data.data.role==="user"){
-              console.log("user access")
-              userPage(welcomeName, welcomeSurname)
+            if (data.data.role === "admin") {
+              console.log("admin access");
+              adminPage(welcomeName, welcomeSurname);
+            } else if (data.data.role === "user") {
+              console.log("user access");
+              userPage(welcomeName, welcomeSurname);
             }
           } catch (error) {
             console.error("error", error);

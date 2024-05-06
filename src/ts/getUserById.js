@@ -1,4 +1,5 @@
 import { disableAdminAccessListener } from "../ts/events/tools"
+import { deleteListener } from "./events/delete";
 
 export function getUserById(userId) {
     const authToken = localStorage.getItem("token");
@@ -109,6 +110,7 @@ export function getUserById(userId) {
         const containerMyUser = document.getElementById("aplication-box");
         containerMyUser.innerHTML = html;
         disableAdminAccessListener(userData._id)
+        deleteListener(userData._id)
       })
       .catch((error) => {
         console.error("Hubo un problema con la solicitud:", error);
