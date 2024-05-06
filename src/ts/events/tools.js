@@ -1,6 +1,7 @@
 import { getAllUsers } from "../getAllUsers"; 
 import {  userRegisterByAdmin } from "../user-register";
 import { getMyUser } from "../getMyUser"; 
+import { disableAdminAccess } from "../disableAdminAccess";
 
 export function getAllUserslistener(){
     const getUsers = document.getElementById("get-all-users");
@@ -35,5 +36,17 @@ export function addUserByAdminListener(){
         } 
         
     );
+    }
+}
+
+export function disableAdminAccessListener(idUser){
+    const disableAdminBottom = document.getElementById("disable-admin-bottom");
+    const userId = idUser;
+
+    if(disableAdminBottom){
+        disableAdminBottom.addEventListener("click", (event) => {
+            console.log(userId);
+            disableAdminAccess(userId);
+        })
     }
 }
