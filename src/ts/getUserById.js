@@ -107,6 +107,7 @@ export function getUserById(userId) {
 
       const containerMyUser = document.getElementById("aplication-box");
       containerMyUser.innerHTML = html;
+      deleteListener(userData._id)
       disableAdminAccessListener(userData._id)
       
     }
