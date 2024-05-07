@@ -46,6 +46,8 @@ export function loginButtonListener() {
             } else if (data.data.role === "user") {
               console.log("user access");
               userPage(welcomeName, welcomeSurname);
+            } else {
+              alert("Tu cuenta esta desabilitada, contacta con los administradores");
             }
           } catch (error) {
             console.error("error", error);

@@ -13,6 +13,7 @@
 
 
 
+
   svg {
     margin: 15px;
     width: 50px;
@@ -31,6 +32,11 @@
 .admin-disable-able{
   height: 50px;
 }
+
+.container-id-rol {
+  display: flex;
+}
+
 .div-my-user {
   width: 50vw;
   background-color: #f8f9fa; /* Color de fondo similar al de AliExpress */

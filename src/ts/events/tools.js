@@ -1,6 +1,7 @@
 import { getAllUsers } from "../getAllUsers"; 
 import {  userRegisterByAdmin } from "../user-register";
-import { getMyUser } from "../getMyUser"; 
+import { getMyUser } from "../getMyUser";
+import { disableAdminAccess } from "../disableAdminAccess";
 
 export function getAllUserslistener(){
     const getUsers = document.getElementById("get-all-users");
@@ -37,3 +38,4 @@ export function addUserByAdminListener(){
     );
     }
 }
+
