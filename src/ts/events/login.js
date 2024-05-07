@@ -30,6 +30,8 @@ export function loginButtonListener() {
 
             const welcomeName = data.data.firstname;
             const welcomeSurname = data.data.surname;
+            const name= localStorage.setItem("name", data.data.firstname);
+            const surname= localStorage.setItem("surname", data.data.surname);
             if (data.token) {
               const token = localStorage.setItem("token", data.token);
               const tokenRefresh = localStorage.setItem(
