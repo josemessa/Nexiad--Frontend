@@ -1,8 +1,6 @@
+import { loginPage } from "../login";
 
-
-const token = localStorage.getItem("token");
-
-export function registerSubmitListener() {
+export function registerUserFromLoginListener() {
     const submit = document.getElementById("register-submit");
     if (submit) {
         submit.addEventListener("click", async (event) => {
@@ -16,15 +14,14 @@ export function registerSubmitListener() {
             const emailValue = document.getElementById("email").value;
             const birthdateValue = document.getElementById("birthdate").value;
             const passwordValue = document.getElementById("password").value;
-            const roleValue = document.getElementById("rol").value;
+          
             
             if (firstnameValue && surnameValue && emailValue && phoneValue && passwordValue) {
                 try {
-                    const response = await fetch("http://localhost:3000/user/signup", {
+                    const response = await fetch("http://localhost:3000/user/signupuser", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
-                            "auth-token": token,
                         },
                         body: JSON.stringify({
                             firstname: firstnameValue,
@@ -35,7 +32,7 @@ export function registerSubmitListener() {
                             email: emailValue,
                             password: passwordValue,
                             birthdate: birthdateValue,
-                            role: roleValue,
+                            
                         }),
                     });
                     
@@ -44,7 +41,7 @@ export function registerSubmitListener() {
                         const confirmationElement = document.createElement("div");
                         confirmationElement.id = "confirmation";
                         confirmationElement.innerHTML = `
-                            <p>Usuario creado correctamente</p>
+                            <p>Usuario creado correctamente, por favor inicie sesión</p>
                             <img id="logo-confirmation" src="/nexiatransp.png" />
                         `;
                         body.appendChild(confirmationElement);
@@ -53,11 +50,23 @@ export function registerSubmitListener() {
                             if (confirmationElement) {
                                 confirmationElement.remove();
                             }
-                            getAllUsers();
+                            loginPage();
                         }, 5000);
                     } else {
-                        const errorData = await response.json();
-                        alert(`Error: ${errorData.message}`);
+                        const body = document.querySelector('body');
+                        const confirmationElement = document.createElement("div");
+                        confirmationElement.id = "confirmation";
+                        confirmationElement.innerHTML = `
+                            <p>Error al registrar el usuario, por favor intentelo de nuevo</p>
+                            <img id="logo-confirmation" src="/nexiatransp.png" />
+                        `;
+                        body.appendChild(confirmationElement);
+                        setTimeout(() => {
+                            if (confirmationElement) {
+                                confirmationElement.remove();
+                            }
+                            loginPage();
+                        }, 5000);
                     }
                 } catch (error) {
                     alert(`Error: ${error.message}`);

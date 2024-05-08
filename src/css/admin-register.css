@@ -42,9 +42,12 @@
 .role-box {
   margin-top: 5vh;
 }
+.warning-box{
+}
 .admin-warning {
+  max-width: 500px;
   color: red;
-  width: 90%;
+  
   font-weight: 700;
 }
 .register-submit {

@@ -3,7 +3,7 @@ import { registerSubmitListener } from "./events/register-submit"
 export function userRegisterByAdmin(){  
     const pageElement= document.getElementById("aplication-box")
     pageElement.innerHTML=""
-    pageElement.innerHTML= `     
+    pageElement.innerHTML= ` <div>  
     <h2 class="register-title">Registro de nuevo usuario</h2>
     <div class="register-box" id="register-box">
     <form class="user-form" action="submit" method="POST">
@@ -55,6 +55,7 @@ export function userRegisterByAdmin(){
             </div>
     <input class="register-submit" id="register-submit" type="button" value="Crear nuevo usuario">
 </form>
+</div>  
 </div>  
 
 `
