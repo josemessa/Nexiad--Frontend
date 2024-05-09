@@ -1,4 +1,4 @@
-import { registerSubmitListener } from "./events/register-submit"
+import { registerSubmitListener } from "./events/user-register-Byadmin"
 
 export function userRegisterByAdmin(){  
     const pageElement= document.getElementById("aplication-box")

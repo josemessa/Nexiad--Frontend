@@ -28,9 +28,13 @@
   align-items: center;
   justify-content: center;
   gap: 10%;
-}
+  width: 40%;
+
+  }
+
 .login-reg-form{
   display: flex;
+  justify-content: center;
   .user-form-login{
     padding: 20px;
   }
@@ -85,6 +89,20 @@
         color: rgb(27, 27, 248);
       }
     }
+  }
+}
+.back-to-login{
+  display: flex;
+  fill:yellow;
+  color: yellow;
+  align-items: center;
+  width:50%;
+ p{
+  white-space: nowrap;
+ }
+  &:hover{
+    color: blue;
+    fill:blue
   }
 }
 

@@ -24,7 +24,7 @@
     .buttons{
         width: 50%;
         display: flex;
-      
+      cursor: pointer;
         justify-content: space-around;
         button{
             padding-inline: 5%;
@@ -32,6 +32,7 @@
             padding-block: 3%;
             font-weight: 600;
             font-size: 16px;
+            cursor: pointer;
         }
     }
    

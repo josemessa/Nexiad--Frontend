@@ -1,6 +1,5 @@
 import { loginButtonListener } from "./events/login"
-import { registerSubmitListener } from "./events/register-submit"
-import { subscribeEventlistener } from "./events/subscribe"
+import { subscribeEventlistener } from "./events/login"
 
 export function loginPage(){
   

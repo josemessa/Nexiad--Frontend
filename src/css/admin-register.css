@@ -58,6 +58,7 @@
   border-radius: 5px;
   padding-block: 10px;
   font-weight: 700;
+  cursor: pointer;
 }
 @media (max-width: 800px) {
   .firstname-surname {
