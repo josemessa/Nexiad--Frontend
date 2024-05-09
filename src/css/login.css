@@ -1,0 +1,78 @@
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  background-image: url(/background.jpg);
+  background-size: cover;
+}
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  height: auto;
+  flex-direction: column;
+
+  img {
+    height: 150px;
+    padding-top: 20px;
+  }
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 50px;
+
+  .email-box {
+    display: flex;
+    flex-direction: column;
+    #email {
+      padding-block: 5px;
+    }
+  }
+  .pass-box {
+    display: flex;
+    flex-direction: column;
+    #password {
+      padding-block: 5px;
+    }
+  }
+  .login-button {
+    width: 50%;
+    margin-inline: auto;
+    margin-top: 20px;
+    background-color: yellow;
+    border-radius: 5px;
+    padding-block: 10px;
+    font-weight: 700;
+  }
+  .suscribe {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 25px;
+    .subscribe-button{
+      color:yellow;
+
+      &:hover{
+        color: rgb(27, 27, 248);
+      }
+    }
+  }
+}
+
+@media (max-height: 500px){
+  .login-box {
+    flex-direction: row;
+    img{
+      padding: 5%;
+    }
+  }
+
+
+}
