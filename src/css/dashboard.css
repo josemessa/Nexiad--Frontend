@@ -12,9 +12,18 @@ main {
 .top-bar {
   display: flex;
   font-size: 12px;
-  justify-content: end;
+  align-items: end;
   margin-bottom: 20px;
   margin-right: 5%;
+  flex-direction: column;
+  a{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    svg{
+      padding-left: 15px;
+    }
+  }
 }
 .tool{
   display: flex;
