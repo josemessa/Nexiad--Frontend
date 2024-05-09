@@ -8,12 +8,13 @@
 
   overflow: hidden;
   background-color: rgb(255, 255, 255);
+  cursor: pointer;
   
 }
 
 .aplication-box {
   overflow-x: hidden;
-  max-height: 90vh;
+ max-height: 90vh; 
   width: 80vw;
 
  
