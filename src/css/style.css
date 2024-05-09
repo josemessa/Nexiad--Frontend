@@ -4,6 +4,7 @@
 @import url("users-list.css");
 @import url("admin-register.css");
 @import url("confirmation.css");
+@import url("patch-user.css");
 html {
   font-family: "Albert Sans", sans-serif;
 }

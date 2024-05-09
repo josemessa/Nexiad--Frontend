@@ -50,7 +50,7 @@ export function loginButtonListener() {
             } else if (data.data.role === "user") {
               console.log("user access");
               userPage(welcomeName, welcomeSurname);
-            } else {
+            } else if (data.data.role === "disable") {
               alert("Tu cuenta esta desabilitada, contacta con los administradores");
             }
           } catch (error) {
