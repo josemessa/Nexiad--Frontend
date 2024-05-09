@@ -42,9 +42,12 @@
 .role-box {
   margin-top: 5vh;
 }
+.warning-box{
+}
 .admin-warning {
+  max-width: 500px;
   color: red;
-  width: 90%;
+  
   font-weight: 700;
 }
 .register-submit {
@@ -55,6 +58,7 @@
   border-radius: 5px;
   padding-block: 10px;
   font-weight: 700;
+  cursor: pointer;
 }
 @media (max-width: 800px) {
   .firstname-surname {
