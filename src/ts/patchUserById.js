@@ -29,7 +29,8 @@ export function patchUserById(userId) {
         user = data.data;
         const userId = user._id
         const html = `
-        <form class="user-form" action="submit" method="POST">
+        <div class="div-form-patch">
+        <form class="user-form-patch" action="submit" method="POST">
              <div class="firstname-surname"> 
                 <div class="firstname-box">
                     <label>Nombre:</label>
@@ -64,9 +65,9 @@ export function patchUserById(userId) {
                     <input type="email" id="email" name="email" value="${user.email}" required>
                 </div>
                 </div>
-        <input class="register-submit" id="patch-user-bottom" type="button" value="Crear nuevo usuario">
-    </form>
-    </div> `
+                </div>
+        <input class="patch-submit" id="patch-user-bottom" type="button" value="Crear nuevo usuario">
+    </form> `
     const userContainer = document.getElementById("div-my-user")
 
     userContainer.innerHTML = html;
