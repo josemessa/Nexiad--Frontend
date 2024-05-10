@@ -1,4 +1,5 @@
 .user {
+  color: white;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -7,14 +8,13 @@
   padding: 10px;
 
   overflow: hidden;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.334);
+  backdrop-filter: blur(5px);
   cursor: pointer;
+  color: white;
 }
 
 .aplication-box {
-  overflow-x: hidden;
-  max-height: 100vh;
-  width: 80vw;
 }
 
 .link:active {
@@ -27,12 +27,12 @@
 }
 
 .name {
-  color: black;
   width: 15%;
 }
 #subscription {
   margin-left: 30%;
   padding: 5px;
+  color: black;
 }
 
 .premium {
