@@ -75,7 +75,7 @@ export function getMyUser() {
         </div>
           <div class="firstname">${myUser.firstname}</div>
           <div class="my-surname">${myUser.surname}</div>
-          <div class="subscription-name">${myUser.subscription}</div>
+          <div class="subscription-name">${myUser.subscription.nombre}</div>
         </div>
         <div class="container-email">
           <div class="email"><b>email:  </b>${myUser.email}</div>

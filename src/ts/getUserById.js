@@ -80,7 +80,7 @@ export function getUserById(userId) {
                     </div>
                     <div class="firstname">${userData.firstname}</div>
                     <div class="my-surname">${userData.surname}</div>
-                    <div class="subscription-name">${userData.subscription}</div>
+                    <div class="subscription-name">${userData.subscription.nombre}</div>
                 </div>
                 <div class="container-email">
                     <div class="email"><b>email:  </b>${userData.email}</div>

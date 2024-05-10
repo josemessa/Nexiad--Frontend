@@ -33,11 +33,11 @@ export function getAllUsers() {
 
       const html = usersData.map((userData) => {
           let subscriptionClass = "";
-          if (userData.subscription === "premium") {
+          if (userData.subscription._id === "663e18c3862df917fabb5543") {
             subscriptionClass = "premium";
-          }if (userData.subscription === "free") {
+          }if (userData.subscription._id === "663e18c3862df917fabb5541") {
             subscriptionClass = "free";
-          }  else if (userData.subscription === "basic") {
+          }  else if (userData.subscription._id === "663e18c3862df917fabb5542") {
             subscriptionClass = "basic";
           }
 
@@ -45,7 +45,7 @@ export function getAllUsers() {
           <div class="user" id="user" data-user-id="${userData._id}">
             <div class="surname"><b>Apellidos:</b> ${userData.surname}</div>
             <div class="name"><b>Nombre:</b> ${userData.firstname}</div>
-            <div id="subscription" class="${subscriptionClass}"><b>${userData.subscription}</b></div>
+            <div id="subscription" class="${subscriptionClass}"><b>${userData.subscription.nombre}</b></div>
           </div>
         `;
         })
