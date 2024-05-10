@@ -7,6 +7,7 @@
   background-image: url(/background.jpg);
   background-size: cover;
 }
+
 .login-box {
   display: flex;
   justify-content: center;
@@ -15,36 +16,32 @@
   background-color: #1a1a1a;
   height: auto;
   flex-direction: column;
- 
 
   img {
     height: 150px;
     padding-top: 20px;
   }
 }
-.reg-logo{
+.reg-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10%;
   width: 40%;
+}
 
-  }
-
-.login-reg-form{
+.login-reg-form {
   display: flex;
   justify-content: center;
-  .user-form-login{
+  .user-form-login {
     padding: 20px;
   }
-  div{
+  div {
     padding: 2%;
-    .reg-input{
-        padding: 2%;
-        width: 100%;
+    .reg-input {
+      padding: 2%;
     }
-
   }
 }
 .login-form {
@@ -82,39 +79,40 @@
     align-items: center;
     width: 100%;
     gap: 25px;
-    .subscribe-button{
-      color:yellow;
+    .subscribe-button {
+      color: yellow;
 
-      &:hover{
+      &:hover {
         color: rgb(27, 27, 248);
       }
     }
   }
 }
-.back-to-login{
+.back-to-login {
   display: flex;
-  fill:yellow;
+  fill: yellow;
   color: yellow;
   align-items: center;
-  width:50%;
- p{
-  white-space: nowrap;
- }
-  &:hover{
+  width: 50%;
+  p {
+    white-space: nowrap;
+  }
+  &:hover {
     color: blue;
-    fill:blue
+    fill: blue;
   }
 }
 
-@media (max-height: 500px){
+@media (max-height: 500px) {
   .login-box {
     flex-direction: row;
-    img{
+    max-height: 60%;
+    img {
       padding: 5%;
     }
   }
-.login-reg-form{
-  flex-direction: column;
-}
-
+  .login-reg-form {
+    flex-direction: column;
+    max-height: 80%;
+  }
 }

@@ -12,42 +12,11 @@
     gap: 2vh;
   }
 }
-.firstname-surname {
-  display: flex;
-  gap: 5vw;
-}
-#firstname {
-  width: 15vw;
-}
-#surname {
-  width: 15vw;
-}
-.adress-city {
-  display: flex;
-  gap: 5vw;
-}
-#adress {
-  width: 15vw;
-}
-.email-password {
-  display: flex;
-  gap: 5vw;
-  #email {
-    width: 15vw;
-  }
-  #password {
-    width: 10vw;
-  }
-}
-.role-box {
-  margin-top: 5vh;
-}
-.warning-box{
-}
+
 .admin-warning {
   max-width: 500px;
   color: red;
-  
+
   font-weight: 700;
 }
 .register-submit {
