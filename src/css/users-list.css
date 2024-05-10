@@ -15,9 +15,10 @@
 }
 
 .aplication-box {
+  overflow-x: hidden;
+  max-height: 100vh;
   width: 80vw;
 }
-
 .link:active {
   color: white;
 }
