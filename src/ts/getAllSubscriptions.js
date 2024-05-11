@@ -24,22 +24,24 @@ export function getallSubscriptions(){
         const subscriptionsData = data.data;
         console.log(subscriptionsData);
         const html = subscriptionsData.map((subscription) => {
-            const beneficios = subscription.beneficios.map((beneficio) => `<div>${beneficio}</div>`).join('');
+            const beneficios = subscription.beneficios.map((beneficio) => `<div>${beneficio}.</div>`).join('');
             return `<div class="subscription-plan">
-                        <h2>${subscription.nombre}</h2>
-                        <ul>
+                        <div class="container-subscription-name">
+                        <h2 class="subscription-name-subscritions">${subscription.nombre}</h2>
+                        </div>
+                        <ul class="ul-subscription">
                             <li><b>descripcion:  </b>${subscription.descripcion}</li>
                             <li><b>duracion:  </b>${subscription.duracion}</li>
                             <li><b>precio:  </b>${subscription.precio}$</li>
-                            <div>
+                            <li>
                             <b>beneficios:  </b>${beneficios}
-                            </div>
+                            </li>
                         </ul>
                     </div>`;
         }).join('');
         const aplicationBox = document.getElementById("aplication-box");
         if(aplicationBox){
-            aplicationBox.innerHTML = html;
+            aplicationBox.innerHTML = `<div class="container-subscriptions">${html}</div>`;
         }
     })
     .catch((error) => {
