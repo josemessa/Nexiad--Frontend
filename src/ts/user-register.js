@@ -5,6 +5,7 @@ export function userRegisterByAdmin() {
   pageElement.innerHTML = "";
   pageElement.innerHTML = ` <div>  
     <h2 class="register-title">Registro de nuevo usuario</h2>
+    <div class="register-container">
     <div class="register-box" id="register-box">
     <form class="user-form" action="submit" method="POST">       
             <div >
@@ -55,6 +56,7 @@ export function userRegisterByAdmin() {
     <input class="register-submit" id="register-submit" type="button" value="Crear nuevo usuario">
 </form>
 </div>  
+</div>
 </div>  
 
 `;
