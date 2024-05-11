@@ -23,6 +23,24 @@ export function getallSubscriptions(){
     .then((data) => {
         const subscriptionsData = data.data;
         console.log(subscriptionsData);
+        const html = subscriptionsData.map((subscription) => {
+            const beneficios = subscription.beneficios.map((beneficio) => `<div>${beneficio}</div>`).join('');
+            return `<div class="subscription-plan">
+                        <h2>${subscription.nombre}</h2>
+                        <ul>
+                            <li><b>descripcion:  </b>${subscription.descripcion}</li>
+                            <li><b>duracion:  </b>${subscription.duracion}</li>
+                            <li><b>precio:  </b>${subscription.precio}$</li>
+                            <div>
+                            <b>beneficios:  </b>${beneficios}
+                            </div>
+                        </ul>
+                    </div>`;
+        }).join('');
+        const aplicationBox = document.getElementById("aplication-box");
+        if(aplicationBox){
+            aplicationBox.innerHTML = html;
+        }
     })
     .catch((error) => {
         console.error(`Hubo un problema con la solicitud: ${error}`);
