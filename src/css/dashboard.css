@@ -24,11 +24,12 @@ main {
     align-items: center;
 
     font-weight: bold;
-    svg {
-      padding-left: 15px;
-      fill: white;
-    }
   }
+}
+
+svg {
+  padding-left: 15px;
+  fill: white;
 }
 
 .dashboard {

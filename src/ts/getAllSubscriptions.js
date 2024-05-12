@@ -1,3 +1,4 @@
+import { addNewSubscriptionListener } from "./events/tools";
 
 export function getallSubscriptions(){
     const authToken = localStorage.getItem("token");
@@ -41,7 +42,8 @@ export function getallSubscriptions(){
         }).join('');
         const aplicationBox = document.getElementById("aplication-box");
         if(aplicationBox){
-            aplicationBox.innerHTML = `<div class="container-subscriptions">${html}</div>`;
+            aplicationBox.innerHTML = `<div class="container-bottom-subscription"><div class="container-bottom-add-subscription"><button class="bottom-add-subscription" id="bottom-add-subscription">crear subscripcion</button></div><div class="container-subscriptions">${html}</div></div>`;
+            addNewSubscriptionListener();
         }
     })
     .catch((error) => {
