@@ -68,10 +68,8 @@ export function userRegisterByAdmin() {
   roleSelect.addEventListener("change", function () {
     if (roleSelect.value === "admin") {
       warningMessage.innerHTML = `<p class="admin-warning">ATENCION: Otorgar el rol ADMIN a un usuario le dará acceso a gestion y manipulacion de la base de datos</p>`;
-      console.log("hola");
     } else {
       warningMessage.innerHTML = `<p> Se creará un usuario estandar en la base de datos</p>`;
-      console.log("adios");
     }
   });
 }
