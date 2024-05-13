@@ -35,10 +35,12 @@ export function userRegisterByAdmin() {
            
                 <div><label >Email:</label>
                 <input type="email" id="email" name="email" placeholder="Escribe aqui tu email" required>
+                <span id="email-error" style="color: red; display: none;">Por favor, ingrese un correo electrónico válido.</span>
             </div>
             <div>
                 <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" placeholder="Escribe aqui tu contraseña" required>
+                <span id="password-error" style="color: red; display: none;">La contraseña debe tener al menos 8 caracteres y un número</span>
             </div>
             <div>
                 <label for="password">Repite tu contraseña</label>

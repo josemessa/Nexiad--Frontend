@@ -1,11 +1,8 @@
+import { validateEmail } from "../../utils/utils";
 import { adminPage } from "../adminPage";
 
 const token = localStorage.getItem("token");
 
-function validateEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
 export function submitAuthListener() {
   const adminAuth = document.getElementById("auth-submit");
   adminAuth.addEventListener("click", async () => {

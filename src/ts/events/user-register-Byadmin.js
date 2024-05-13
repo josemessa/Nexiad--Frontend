@@ -1,13 +1,35 @@
+import { validateEmail, validatePassword } from "../../utils/utils";
 import { getAllUsers } from "../getAllUsers";
-
-const token = localStorage.getItem("token");
 
 export function registerSubmitListener() {
   const submit = document.getElementById("register-submit");
   if (submit) {
     submit.addEventListener("click", async (event) => {
       event.preventDefault();
+      const emailInput = document.getElementById("email");
+      const emailError = document.getElementById("email-error");
+      const emailCheck = emailInput.value.trim();
 
+      if (!validateEmail(emailCheck)) {
+        emailError.style.display = "block";
+        return;
+      }
+      const passwordValidation = document
+        .getElementById("password")
+        .value.trim();
+      const passwordValidation2 = document
+        .getElementById("password-confirmation")
+        .value.trim();
+      const passwordError = document.getElementById("password-error");
+      if (
+        !validatePassword(passwordValidation) ||
+        !validatePassword(passwordValidation2)
+      ) {
+        passwordError.style.display = "block";
+        return;
+      } else {
+        passwordError.style.display = "none";
+      }
       const firstnameValue = document.getElementById("firstname").value;
       const surnameValue = document.getElementById("surname").value;
       const adressValue = document.getElementById("adress").value;
@@ -38,7 +60,9 @@ export function registerSubmitListener() {
             confirmationElement.remove();
           }
         }, 3000);
+        return;
       }
+
       const roleValue = document.getElementById("rol").value;
 
       if (
@@ -50,6 +74,7 @@ export function registerSubmitListener() {
         passwordConfirmation
       ) {
         try {
+          const token = localStorage.getItem("token");
           const response = await fetch("http://localhost:3000/user/signup", {
             method: "POST",
             headers: {
@@ -87,9 +112,7 @@ export function registerSubmitListener() {
             }, 5000);
           } else {
             const errorData = await response.json();
-            if (
-              errorData.message.includes("correo electrónico ya está en uso")
-            ) {
+            if (errorData.message.includes("El email ya está autorizado")) {
               const body = document.querySelector("body");
               const confirmationElement = document.createElement("div");
               confirmationElement.id = "confirmation";

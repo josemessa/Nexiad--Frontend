@@ -3,6 +3,47 @@ import { loginPage } from "../login";
 import { userPage } from "../userPage";
 import { registerUserFromLoginListener } from "./user-register-login";
 
+export async function loginFn(email, password) {
+  try {
+    const response = await fetch("http://localhost:3000/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
+    const data = await response.json();
+
+    const welcomeName = data.data.firstname;
+    const welcomeSurname = data.data.surname;
+    const name = localStorage.setItem("name", data.data.firstname);
+    const surname = localStorage.setItem("surname", data.data.surname);
+    if (data.token) {
+      const token = localStorage.setItem("token", data.token);
+      const tokenRefresh = localStorage.setItem(
+        "tokenRefresh",
+        data.token_refresh
+      );
+    } else {
+      // Manejo de errores de respuesta
+      console.log("Error en la respuesta:", data.message);
+    }
+    if (data.data.role === "admin") {
+      console.log("admin access");
+      adminPage(welcomeName, welcomeSurname);
+    } else if (data.data.role === "user") {
+      console.log("user access");
+      userPage(welcomeName, welcomeSurname);
+    } else if (data.data.role === "disable") {
+      alert("Tu cuenta esta desabilitada, contacta con los administradores");
+    }
+  } catch (error) {
+    console.error("error", error);
+  }
+}
 export function loginButtonListener() {
   const loginButton = document.getElementById("login-button");
   if (loginButton) {
@@ -15,49 +56,7 @@ export function loginButtonListener() {
         const emailValue = emailInput.value;
         const passwordValue = passwordInput.value;
         if (emailValue && passwordValue) {
-          console.log(emailValue);
-          console.log(passwordValue);
-          try {
-            const response = await fetch("http://localhost:3000/user/login", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                email: emailValue,
-                password: passwordValue,
-              }),
-            });
-            const data = await response.json();
-
-            const welcomeName = data.data.firstname;
-            const welcomeSurname = data.data.surname;
-            const name = localStorage.setItem("name", data.data.firstname);
-            const surname = localStorage.setItem("surname", data.data.surname);
-            if (data.token) {
-              const token = localStorage.setItem("token", data.token);
-              const tokenRefresh = localStorage.setItem(
-                "tokenRefresh",
-                data.token_refresh
-              );
-            } else {
-              // Manejo de errores de respuesta
-              console.log("Error en la respuesta:", data.message);
-            }
-            if (data.data.role === "admin") {
-              console.log("admin access");
-              adminPage(welcomeName, welcomeSurname);
-            } else if (data.data.role === "user") {
-              console.log("user access");
-              userPage(welcomeName, welcomeSurname);
-            } else if (data.data.role === "disable") {
-              alert(
-                "Tu cuenta esta desabilitada, contacta con los administradores"
-              );
-            }
-          } catch (error) {
-            console.error("error", error);
-          }
+          loginFn(emailValue, passwordValue);
         } else {
           alert("Cumplimenta todos los campos");
         }
@@ -118,6 +117,7 @@ export function subscribeEventlistener() {
     <div>
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" placeholder="Escribe aqui tu contraseña" required>
+        <span id="password-error" style="color: red; display: none;">La contraseña debe tener al menos 8 caracteres y un número</span>
     </div>
     <div>
         <label for="password">Repite tu contraseña</label>
