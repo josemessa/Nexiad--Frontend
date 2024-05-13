@@ -2,6 +2,7 @@ import { registerSubmitListener } from "./events/user-register-Byadmin";
 
 export function userRegisterByAdmin() {
   const pageElement = document.getElementById("aplication-box");
+  let subscriptionsData;
   pageElement.innerHTML = "";
   pageElement.innerHTML = ` <div>  
     <h2 class="register-title">Registro de nuevo usuario</h2>
@@ -51,6 +52,10 @@ export function userRegisterByAdmin() {
                 <option value="usuario_estandar">Usuario Estándar</option>
                 <option value="admin">Admin</option>
             </select>
+            <div>
+            <label for="role">Selecciona el tipo de subscripcion</label>
+            <select id="subscription-select"></select>
+            </div>
             <div id="warning-box"></div>
             </div>
     <input class="register-submit" id="register-submit" type="button" value="Crear nuevo usuario">
@@ -74,4 +79,33 @@ export function userRegisterByAdmin() {
       console.log("adios");
     }
   });
+  
+  fetch(`http://localhost:3000/subscription/getsubscriptions`, {
+            method: "GET",
+            headers: {
+                "content-type": "application/json"
+            },
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Error: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data.data);
+            subscriptionsData = data.data;
+            const containerSelectSubscriptions = document.getElementById("subscription-select")
+            if(containerSelectSubscriptions){
+              subscriptionsData.forEach(subscription => {
+                const option = document.createElement("option")
+                option.value = subscription._id;
+                option.textContent = subscription.nombre;
+                containerSelectSubscriptions.appendChild(option);
+              })
+            }
+        })
+        .catch((error) => {
+            console.error(`Hubo un problema con la solicitud: ${error}`);
+        });
 }
