@@ -2,6 +2,8 @@ import { getAllUsers } from "../getAllUsers";
 import { userRegisterByAdmin } from "../user-register";
 import { getMyUser } from "../getMyUser";
 import { loginPage } from "../login";
+import { getallSubscriptions } from "../getAllSubscriptions";
+import { addNewSubscriptionForm } from "../addNewSubscriptionForm";
 
 export function getAllUserslistener() {
   const getUsers = document.getElementById("get-all-users");
@@ -64,4 +66,22 @@ export function closeSessionListener() {
       loginPage();
     });
   });
+}
+
+export function getallSubscriptionsListener(){
+  const subscriptionsBottom = document.getElementById("type-subscriptions");
+  if(subscriptionsBottom){
+    subscriptionsBottom.addEventListener("click", (event) => {
+      getallSubscriptions()
+    })
+  }
+}
+
+export function addNewSubscriptionListener(){
+  const bottomSubscription = document.getElementById("bottom-add-subscription");
+  if(bottomSubscription){
+    bottomSubscription.addEventListener("click", (event) => {
+      addNewSubscriptionForm()
+    })
+  }
 }

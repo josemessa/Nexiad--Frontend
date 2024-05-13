@@ -76,6 +76,9 @@ function backToLogin() {
 
 export function subscribeEventlistener() {
   const subscribe = document.getElementById("subscribe");
+  let subscriptionsData;
+
+  
 
   subscribe.addEventListener("click", (event) => {
     const loginBox = document.getElementById("login-box");
@@ -122,7 +125,12 @@ export function subscribeEventlistener() {
     <div>
         <label for="password">Repite tu contraseña</label>
         <input type="password" id="password-confirmation" name="password" placeholder="Repite aqui la contraseña" >
-    </div> 
+    </div>
+    <div id="container-select-subscription"></div>
+    <div id="constainer-subscription-register">
+    <label for="role">Selecciona el tipo de subscripcion</label>
+    <select id="subscription-select"></select>
+    </div>
     
           <input
             class="register-submit"
@@ -134,5 +142,34 @@ export function subscribeEventlistener() {
       </div>`;
     registerUserFromLoginListener();
     backToLogin();
+
+    fetch(`http://localhost:3000/subscription/getsubscriptions`, {
+            method: "GET",
+            headers: {
+                "content-type": "application/json"
+            },
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Error: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data.data);
+            subscriptionsData = data.data;
+            const containerSelectSubscriptions = document.getElementById("subscription-select")
+            if(containerSelectSubscriptions){
+              subscriptionsData.forEach(subscription => {
+                const option = document.createElement("option")
+                option.value = subscription._id;
+                option.textContent = subscription.nombre;
+                containerSelectSubscriptions.appendChild(option);
+              })
+            }
+        })
+        .catch((error) => {
+            console.error(`Hubo un problema con la solicitud: ${error}`);
+        });
   });
 }

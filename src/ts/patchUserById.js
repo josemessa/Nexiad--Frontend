@@ -66,7 +66,7 @@ export function patchUserById(userId) {
                 </div>
                 </div>
                 </div>
-        <input class="patch-submit" id="patch-user-bottom" type="button" value="Crear nuevo usuario">
+        <input class="patch-submit" id="patch-user-bottom" type="button" value="editar usuario">
     </form> `
     const userContainer = document.getElementById("div-my-user")
 

@@ -1,0 +1,73 @@
+.container-subscriptions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.subscription-plan {
+    color: white;
+    border-radius: 10px;
+    background: rgba( 201, 194, 194, 0.25 );
+    margin-top: 100px;
+    padding: 20px;
+    padding-left: 0px;
+}
+
+
+.container-subscription-name{
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(238, 255, 0, 0.618);
+    border-radius: 5px;
+    margin-left: 90px;
+    margin-bottom: 20px;
+}
+
+.ul-subscription li{
+    padding-bottom: 10px;
+}
+
+.container-bottom-subscription{
+    display: block;
+}
+
+
+.bottom-add-subscription{
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.container-bottom-add-subscription{
+    display: flex;
+    justify-content: right;
+}
+
+.container-form-subscription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.subscription-form{
+    background: rgba( 201, 194, 194, 0.25 );
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.send-bottom-form-subscriptions{
+width: 100px;
+}
+
+.bottom-add-subscription{
+    padding: 10px;
+    font-weight: 700;
+    background: rgba(29, 75, 241, 0.455);
+    border-radius: 5px;
+    
+}

@@ -8,8 +8,9 @@
   padding: 10px;
 
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.334);
-  backdrop-filter: blur(5px);
+  background: rgba( 201, 194, 194, 0.25 );
+  backdrop-filter: blur( 1.5px );
+  -webkit-backdrop-filter: blur( 1.5px );
   cursor: pointer;
   color: white;
 }
@@ -34,26 +35,15 @@
 #subscription {
   margin-left: 30%;
   padding: 5px;
-  color: black;
+  color: white;
 }
 
-.premium {
-  border-radius: 4px;
-  text-align: center;
-  background-color: #f9f45d;
-}
-.free {
-  border-radius: 4px;
-  text-align: center;
-  background-color: #00c61e;
+.subscription-name-list{
+  background: rgba(238, 255, 0, 0.618);
+  border-radius: 5px;
 }
 
-.basic {
-  display: flex;
-  background-color: #047cfc;
-  border-radius: 4px;
-  text-align: center;
-}
+
 
 @media (max-width: 868px) {
   .user div {
