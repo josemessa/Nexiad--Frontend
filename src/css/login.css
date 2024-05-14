@@ -10,53 +10,58 @@
 
 .login-box {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   border-radius: 10px;
   background-color: #2c2c2ccf;
-  height: auto;
   flex-direction: column;
+  max-height: 80%;
+  padding: 2%;
 
   img {
     height: 150px;
     padding-top: 20px;
   }
-}
-.reg-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10%;
-  width: 40%;
-}
-
-.login-reg-form {
-  display: flex;
-  justify-content: center;
-  .user-form-login {
-    padding: 20px;
-  }
-  div {
-    padding: 2%;
-    .reg-input {
-      padding: 2%;
+  .login-reg-form {
+    display: flex;
+    justify-content: space-around;
+    .user-form-login {
+      input {
+        margin-block: 2%;
+        width: 70%;
+      }
+      span {
+        max-width: 80%;
+      }
     }
   }
-}
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  padding: 50px;
-
-  .email-box {
+  .reg-logo {
     display: flex;
     flex-direction: column;
-    #email {
-      padding-block: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    width: 40%;
+    img {
+      height: 150px;
+      padding-top: 20px;
     }
   }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 50px;
+
+    .email-box {
+      display: flex;
+      flex-direction: column;
+      #email {
+        padding-block: 5px;
+      }
+    }
+  }
+
   .pass-box {
     display: flex;
     flex-direction: column;
@@ -90,9 +95,9 @@
 }
 .back-to-login {
   display: flex;
-  fill: yellow;
   color: yellow;
   align-items: center;
+  fill: yellow;
   width: 50%;
   p {
     white-space: nowrap;

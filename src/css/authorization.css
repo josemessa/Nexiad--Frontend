@@ -1,0 +1,14 @@
+h2 {
+  font-size: 40px;
+  margin-inline: 5vw;
+  color: white;
+}
+.auth-app {
+  margin-top: 25vh;
+  margin-inline: 5vw;
+  color: white;
+
+  #email {
+    width: 50%;
+  }
+}

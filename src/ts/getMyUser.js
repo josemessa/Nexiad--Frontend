@@ -34,41 +34,43 @@ export function getMyUser() {
       };
 
       const colorMap = {
-        "A": "#3498db",
-        "B": "#2ecc71",
-        "C": "#f1c40f",
-        "D": "#e67e22",
-        "E": "#e74c3c",
-        "F": "#9b59b6",
-        "G": "#1abc9c",
-        "H": "#16a085",
-        "I": "#f39c12",
-        "J": "#c0392b",
-        "K": "#8e44ad",
-        "L": "#34495e",
-        "M": "#27ae60",
-        "N": "#2980b9",
-        "O": "#d35400",
-        "P": "#2c3e50",
-        "Q": "#f7dc6f",
-        "R": "#7f8c8d",
-        "S": "#16a085",
-        "T": "#e74c3c",
-        "U": "#95a5a6",
-        "V": "#1abc9c",
-        "W": "#f1c40f",
-        "X": "#9b59b6",
-        "Y": "#8e44ad",
-        "Z": "#3498db"
+        A: "#3498db",
+        B: "#2ecc71",
+        C: "#f1c40f",
+        D: "#e67e22",
+        E: "#e74c3c",
+        F: "#9b59b6",
+        G: "#1abc9c",
+        H: "#16a085",
+        I: "#f39c12",
+        J: "#c0392b",
+        K: "#8e44ad",
+        L: "#34495e",
+        M: "#27ae60",
+        N: "#2980b9",
+        O: "#d35400",
+        P: "#2c3e50",
+        Q: "#f7dc6f",
+        R: "#7f8c8d",
+        S: "#16a085",
+        T: "#e74c3c",
+        U: "#95a5a6",
+        V: "#1abc9c",
+        W: "#f1c40f",
+        X: "#9b59b6",
+        Y: "#8e44ad",
+        Z: "#3498db",
       };
-      
+
       const initial = myUser.firstname.charAt(0).toUpperCase();
-      const color = colorMap[initial] || getRandomColor(); 
+      const color = colorMap[initial] || getRandomColor();
 
       const formattedBirthdate = birthdate.toLocaleString("en-US", options);
       console.log(formattedBirthdate);
 
-      const html = `<div class="div-my-user">
+      const html = `
+      <div class="user-edit">
+      <div class="div-my-user">
         <div class="container-name">
         <div class="profile-image" style="background-color: ${color};">
           ${initial}
@@ -86,7 +88,7 @@ export function getMyUser() {
           <div class="adress"><b>direccion:</b>  ${myUser.adress}</div>
           <div class="birthdate"><b>fecha de nacimiento:</b>  ${formattedBirthdate}</div>
         </div>
-       
+        </div>
       </div>`;
 
       console.log(html);
@@ -96,6 +98,3 @@ export function getMyUser() {
       containerMyUser.innerHTML = html;
     });
 }
-
-
-
