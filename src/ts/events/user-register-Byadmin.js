@@ -1,5 +1,6 @@
 import { validateEmail, validatePassword } from "../../utils/utils";
 import { getAllUsers } from "../getAllUsers";
+import { loginPage } from "../login";
 
 export function registerSubmitListener() {
   const submit = document.getElementById("register-submit");
@@ -93,7 +94,7 @@ export function registerSubmitListener() {
               role: roleValue,
             }),
           });
-
+          const errorData = await response.json();
           if (response.ok) {
             const body = document.querySelector("body");
             const confirmationElement = document.createElement("div");
@@ -110,27 +111,40 @@ export function registerSubmitListener() {
               }
               getAllUsers();
             }, 5000);
-          } else {
-            const errorData = await response.json();
-            if (errorData.message.includes("El email ya está autorizado")) {
-              const body = document.querySelector("body");
-              const confirmationElement = document.createElement("div");
-              confirmationElement.id = "confirmation";
-              confirmationElement.innerHTML = `
+          } else if (
+            errorData.message.includes("El email ya está autorizado")
+          ) {
+            const body = document.querySelector("body");
+            const confirmationElement = document.createElement("div");
+            confirmationElement.id = "confirmation";
+            confirmationElement.innerHTML = `
                             <p>El email ya se encuentra registrado en nuestra base de datos<br> Por favor intentelo con otro Email</p>
                             <img id="logo-confirmation" src="/nexiatransp.png" />
                         `;
-              body.appendChild(confirmationElement);
+            body.appendChild(confirmationElement);
 
-              setTimeout(() => {
-                if (confirmationElement) {
-                  confirmationElement.remove();
-                }
-              }, 3000);
-            }
+            setTimeout(() => {
+              if (confirmationElement) {
+                confirmationElement.remove();
+              }
+            }, 3000);
           }
         } catch (error) {
-          alert(`Error: ${error.message}`);
+          const body = document.querySelector("body");
+          const confirmationElement = document.createElement("div");
+          confirmationElement.id = "confirmation";
+          confirmationElement.innerHTML = `
+                        <p>Su sesion ha caducado. Redirigiendo al login</p>
+                        <img id="logo-confirmation" src="/nexiatransp.png" />
+                    `;
+          body.appendChild(confirmationElement);
+
+          setTimeout(() => {
+            if (confirmationElement) {
+              confirmationElement.remove();
+            }
+            loginPage();
+          }, 3000);
         }
       } else {
         alert("Por favor, completa todos los datos del formulario.");
