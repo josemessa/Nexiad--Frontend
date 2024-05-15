@@ -74,6 +74,7 @@ export async function deleteListener(userId) {
             if (sessionExpiredElement) {
               sessionExpiredElement.remove();
             }
+            localStorage.clear();
             loginPage();
           }, 3000);
           console.log(error);

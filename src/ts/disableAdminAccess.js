@@ -48,6 +48,7 @@ export function disableAdminAccess(userId) {
         if (confirmationElement) {
           confirmationElement.remove();
         }
+        localStorage.clear();
         loginPage();
       }, 3000);
     });

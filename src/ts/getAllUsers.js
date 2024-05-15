@@ -43,8 +43,6 @@ export function getAllUsers() {
         `;
         })
         .join("");
-      const appSpace = document.getElementById("app-space");
-      appSpace.innerHTML = `<h2>Lista de usuarios</h2>`;
       const containerUsers = document.getElementById("aplication-box");
 
       if (!containerUsers) {
@@ -80,6 +78,7 @@ export function getAllUsers() {
         if (confirmationElement) {
           confirmationElement.remove();
         }
+        localStorage.clear();
         loginPage();
       }, 3000);
     });
