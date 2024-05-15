@@ -1,4 +1,5 @@
 import { getAllUsers } from "../getAllUsers";
+import { loginPage } from "../login";
 
 export async function deleteListener(userId) {
   const authToken = localStorage.getItem("token");
@@ -13,15 +14,14 @@ export async function deleteListener(userId) {
       confirmationElement = document.createElement("div");
       confirmationElement.id = "confirmation";
       confirmationElement.innerHTML = `
-                
-                    <p>El usuario con el ID ${userId} será eliminado de la base de datos de NEXIAD.</p>
-                    <p>¿Desea continuar?</p>
-                    <div class="buttons">
-                        <button id="cancel">Cancelar</button>
-                        <button id="confirm">Sí, eliminar usuario</button>
-                    </div>
-                    <img id="logo-confirmation" src="/nexiatransp.png"></img>
-            `;
+        <p>El usuario con el ID ${userId} será eliminado de la base de datos de NEXIAD.</p>
+        <p>¿Desea continuar?</p>
+        <div class="buttons">
+            <button id="cancel">Cancelar</button>
+            <button id="confirm">Sí, eliminar usuario</button>
+        </div>
+        <img id="logo-confirmation" src="/nexiatransp.png"></img>
+      `;
       body.appendChild(confirmationElement);
       const cancelButton = document.getElementById("cancel");
       const confirmButton = document.getElementById("confirm");
@@ -39,29 +39,45 @@ export async function deleteListener(userId) {
               "auth-token": authToken,
             },
           });
-
+          const errorData = await response.json();
           if (response.ok) {
             const deletedAdvice = document.createElement("div");
-            deletedAdvice.classList="deleted"
+            deletedAdvice.classList = "deleted";
             deletedAdvice.textContent = `El usuario con el ID ${userId} ha sido eliminado. Redirigiendo a Listado de usuarios`;
             body.appendChild(deletedAdvice);
             if (confirmationElement) {
-                confirmationElement.remove();
-              }
+              confirmationElement.remove();
+            }
             setTimeout(() => {
               if (deletedAdvice) {
                 deletedAdvice.remove();
               }
-
-              
-
               getAllUsers();
-            }, 5000);
+            }, 4000);
           } else {
             console.error(`Error al eliminar el usuario con el ID ${userId}`);
           }
         } catch (error) {
-          console.error("error", error);
+          if (confirmationElement) {
+            confirmationElement.remove();
+          }
+          const body = document.querySelector("body");
+          const sessionExpiredElement = document.createElement("div");
+          sessionExpiredElement.id = "confirmation";
+          sessionExpiredElement.innerHTML = `
+            <p>Su sesion ha caducado. Redirigiendo al login</p>
+            <img id="logo-confirmation" src="/nexiatransp.png" />
+          `;
+          body.appendChild(sessionExpiredElement);
+
+          setTimeout(() => {
+            if (sessionExpiredElement) {
+              sessionExpiredElement.remove();
+            }
+            localStorage.clear();
+            loginPage();
+          }, 3000);
+          console.log(error);
         }
       });
     });
