@@ -31,6 +31,7 @@ export function patchUserById(userId) {
         const html = `
         <div class="div-form-patch">
         <form class="user-form-patch" action="submit" method="POST">
+        <div class="container-name-adress">
              <div class="firstname-surname"> 
                 <div class="firstname-box">
                     <label>Nombre:</label>
@@ -49,6 +50,7 @@ export function patchUserById(userId) {
                 <div class="city">
                     <label>Ciudad:</label>
                      <input type="city" id="city" value="${user.city}" >
+                </div>
                 </div>
                 </div>
                 <div class="phone">
