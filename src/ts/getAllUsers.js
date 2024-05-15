@@ -1,4 +1,5 @@
 import { getUserById } from "../ts/getUserById";
+import { loginPage } from "./login";
 export function getAllUsers() {
   const authToken = localStorage.getItem("token");
 
@@ -31,7 +32,8 @@ export function getAllUsers() {
 
       const usersData = data.data;
 
-      const html = usersData.map((userData) => {
+      const html = usersData
+        .map((userData) => {
           return `
           <div class="user" id="user" data-user-id="${userData._id}">
             <div class="surname"><b>Apellidos:</b> ${userData.surname}</div>
@@ -41,7 +43,8 @@ export function getAllUsers() {
         `;
         })
         .join("");
-
+      const appSpace = document.getElementById("app-space");
+      appSpace.innerHTML = `<h2>Lista de usuarios</h2>`;
       const containerUsers = document.getElementById("aplication-box");
 
       if (!containerUsers) {
@@ -51,21 +54,33 @@ export function getAllUsers() {
 
       containerUsers.innerHTML = html;
 
-      const users = document.querySelectorAll('.user');
+      const users = document.querySelectorAll(".user");
 
-      users.forEach(user => {
-        user.addEventListener('click', (event) => {
-            event.stopPropagation();
-            const userId = user.dataset.userId;
-            if (userId) {
-                getUserById(userId);
-            }
+      users.forEach((user) => {
+        user.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const userId = user.dataset.userId;
+          if (userId) {
+            getUserById(userId);
+          }
         });
-    });
-    
-
+      });
     })
     .catch((error) => {
-      console.error("Hubo un problema con la solicitud:", error);
+      const body = document.querySelector("body");
+      const confirmationElement = document.createElement("div");
+      confirmationElement.id = "confirmation";
+      confirmationElement.innerHTML = `
+                    <p>Su sesion ha caducado. Redirigiendo al login</p>
+                    <img id="logo-confirmation" src="/nexiatransp.png" />
+                `;
+      body.appendChild(confirmationElement);
+
+      setTimeout(() => {
+        if (confirmationElement) {
+          confirmationElement.remove();
+        }
+        loginPage();
+      }, 3000);
     });
 }
