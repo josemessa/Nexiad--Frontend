@@ -5,19 +5,19 @@ export function addNewSubscriptionForm(){
     aplicationBox.innerHTML = `<div class="container-form-subscription"><form id="subscriptionForm" class="subscription-form">
     <div>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" value="Basic" readonly>
+        <input type="text" id="nombre" class="inputs-add-subscriptions" name="nombre" >
     </div>
     <div>
         <label for="descripcion">Descripción:</label>
-        <input type="text" id="descripcion" name="descripcion" value="Suscripción básica" readonly>
+        <input type="text" id="descripcion" class="inputs-add-subscriptions" name="descripcion" >
     </div>
     <div>
         <label for="duracion">Duración:</label>
-        <input type="text" id="duracion" name="duracion" value="6 meses" readonly>
+        <input type="text" id="duracion" class="inputs-add-subscriptions" name="duracion">
     </div>
     <div>
         <label for="precio">Precio:</label>
-        <input type="number" id="precio" name="precio" value="10" readonly>
+        <input type="number" id="precio" class="inputs-add-subscriptions" name="precio">
     </div>
     <div>
         <label for="beneficios">Beneficios:</label>

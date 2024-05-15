@@ -1,6 +1,6 @@
 .container-subscriptions {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
     justify-items: center;
     align-items: center;
@@ -15,17 +15,30 @@
     padding-left: 0px;
 }
 
+.inputs-add-subscriptions{
+    background: rgba( 201, 194, 194, 0.25 );
+}
+
 
 .container-subscription-name{
-    width: 120px;
-    height: 30px;
+    width: 180px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgba(238, 255, 0, 0.618);
     border-radius: 5px;
-    margin-left: 90px;
+    margin-left: 65px;
     margin-bottom: 20px;
+}
+
+.container-name-adress{
+    display: flex;
+    gap: 20px;
+}
+
+.subscription-name-subscritions{
+ 
 }
 
 .ul-subscription li{
@@ -62,12 +75,13 @@
 
 .send-bottom-form-subscriptions{
 width: 100px;
+background-color: rgba(255, 255, 0, 0.738);
+border-radius: 5px;
 }
 
 .bottom-add-subscription{
     padding: 10px;
     font-weight: 700;
-    background: rgba(29, 75, 241, 0.455);
-    border-radius: 5px;
-    
+    background: rgba(255, 255, 0, 0.738);
+    border-radius: 5px
 }
