@@ -65,18 +65,32 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: rgba(255, 255, 255, 0.733);
+}
+
+.form-contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .subscription-form{
     background: rgba( 201, 194, 194, 0.25 );
     padding: 20px;
     border-radius: 10px;
+    width: 350px;
+    height: 350px; 
+    
 }
 
 .send-bottom-form-subscriptions{
 width: 100px;
 background-color: rgba(255, 255, 0, 0.738);
 border-radius: 5px;
+margin-top: 20px;
+height: 30px;
 }
 
 .bottom-add-subscription{
@@ -84,4 +98,8 @@ border-radius: 5px;
     font-weight: 700;
     background: rgba(255, 255, 0, 0.738);
     border-radius: 5px
+}
+
+.inputs-add-subscriptions{
+    margin-top: 20px;
 }
