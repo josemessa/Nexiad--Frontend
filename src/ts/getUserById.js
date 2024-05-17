@@ -83,16 +83,16 @@ export function getUserById(userId) {
                     <div class="subscription-name">${userData.subscription.nombre}</div>
                 </div>
                 <div class="container-email">
-                    <div class="email"><b>email:  </b>${userData.email}</div>
-                    <div class="numero"><b>numero:  </b>${userData.phone}</div>
+                    <div class="email"><b>Email:  </b>${userData.email}</div>
+                    <div class="numero"><b>Numero:  </b>${userData.phone}</div>
                 </div>
                 <div class="container-id-rol">
-                <div class="user-id" id="user-id"><b>id:  </b>${userData._id}</div>
-                <div class="user-rol" id="user-rol"><b>rol:  </b>${userData.role}</div>
+                <div class="user-id" id="user-id"><b>Id:  </b>${userData._id}</div>
+                <div class="user-rol" id="user-rol"><b>Rol:  </b>${userData.role}</div>
                 </div>
                 <div class="container-adress">
-                    <div class="adress"><b>direccion:</b>  ${userData.adress}</div>
-                    <div class="birthdate"><b>fecha de nacimiento:</b>  ${formattedBirthdate}</div>
+                    <div class="adress"><b>Direccion:</b>  ${userData.adress}</div>
+                    <div class="birthdate"><b>Fecha de nacimiento:</b>  ${formattedBirthdate}</div>
                 </div>
             </div>
             <div class="edit-tools">

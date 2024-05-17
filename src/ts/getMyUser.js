@@ -80,13 +80,13 @@ export function getMyUser() {
           <div class="subscription-name">${myUser.subscription.nombre}</div>
         </div>
         <div class="container-email">
-          <div class="email"><b>email:  </b>${myUser.email}</div>
-          <div class="numero"><b>numero:  </b>${myUser.phone}</div>
+          <div class="email"><b>Email:  </b>${myUser.email}</div>
+          <div class="numero"><b>Numero:  </b>${myUser.phone}</div>
         </div>
-        <div class="user-id"><b>id:  </b>${myUser._id}</div>
+        <div class="user-id"><b>Id:  </b>${myUser._id}</div>
         <div class="container-adress">
-          <div class="adress"><b>direccion:</b>  ${myUser.adress}</div>
-          <div class="birthdate"><b>fecha de nacimiento:</b>  ${formattedBirthdate}</div>
+          <div class="adress"><b>Direccion:</b>  ${myUser.adress}</div>
+          <div class="birthdate"><b>Fecha de nacimiento:</b>  ${formattedBirthdate}</div>
         </div>
         </div>
       </div>`;
