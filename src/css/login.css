@@ -4,62 +4,64 @@
   align-items: center;
   height: 100vh;
   color: white;
-  background-image: url(/background.jpg);
+  background-image: url(/background3.jpg);
   background-size: cover;
 }
+
 .login-box {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   border-radius: 10px;
-  background-color: #1a1a1a;
-  height: auto;
+  background-color: #2c2c2ccf;
   flex-direction: column;
- 
+  max-height: 80%;
+  padding: 2%;
 
   img {
     height: 150px;
     padding-top: 20px;
   }
-}
-.reg-logo{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10%;
-  width: 40%;
-
-  }
-
-.login-reg-form{
-  display: flex;
-  justify-content: center;
-  .user-form-login{
-    padding: 20px;
-  }
-  div{
-    padding: 2%;
-    .reg-input{
-        padding: 2%;
-        width: 100%;
+  .login-reg-form {
+    display: flex;
+    justify-content: space-around;
+    .user-form-login {
+      input {
+        margin-block: 2%;
+        width: 70%;
+      }
+      span {
+        max-width: 80%;
+      }
     }
-
   }
-}
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  padding: 50px;
-
-  .email-box {
+  .reg-logo {
     display: flex;
     flex-direction: column;
-    #email {
-      padding-block: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    width: 40%;
+    img {
+      height: 150px;
+      padding-top: 20px;
     }
   }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 50px;
+
+    .email-box {
+      display: flex;
+      flex-direction: column;
+      #email {
+        padding-block: 5px;
+      }
+    }
+  }
+
   .pass-box {
     display: flex;
     flex-direction: column;
@@ -82,39 +84,40 @@
     align-items: center;
     width: 100%;
     gap: 25px;
-    .subscribe-button{
-      color:yellow;
+    .subscribe-button {
+      color: yellow;
 
-      &:hover{
+      &:hover {
         color: rgb(27, 27, 248);
       }
     }
   }
 }
-.back-to-login{
+.back-to-login {
   display: flex;
-  fill:yellow;
   color: yellow;
   align-items: center;
-  width:50%;
- p{
-  white-space: nowrap;
- }
-  &:hover{
+  fill: yellow;
+  width: 50%;
+  p {
+    white-space: nowrap;
+  }
+  &:hover {
     color: blue;
-    fill:blue
+    fill: blue;
   }
 }
 
-@media (max-height: 500px){
+@media (max-height: 500px) {
   .login-box {
     flex-direction: row;
-    img{
+    max-height: 60%;
+    img {
       padding: 5%;
     }
   }
-.login-reg-form{
-  flex-direction: column;
-}
-
+  .login-reg-form {
+    flex-direction: column;
+    max-height: 80%;
+  }
 }

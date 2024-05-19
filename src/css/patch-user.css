@@ -1,0 +1,42 @@
+.user-form-patch {
+    height: 36vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.patch-submit {
+    display: flex;
+    justify-content: flex-start; 
+    margin-left: auto;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    width: fit-content;
+    background-color: yellow;
+   border-radius: 5px;
+   padding-block: 15px;
+   font-weight: 700;
+   cursor: pointer;
+   border: none;
+} 
+
+.user-form-patch input[type="text"],
+.user-form-patch input[type="email"],
+.user-form-patch input[type="date"],
+.user-form-patch input[type="phone"],
+.user-form-patch input[type="city"],
+.user-form-patch input[type="adress"],
+.user-form-patch input[type="firstname"],
+.user-form-patch input[type="surname"] {
+    padding: 5px;
+    width: 200px;
+    height: 25px;
+    margin-top: 25px; /* Ajusta el padding a tu preferencia */
+}
+
+
+
+
+
+

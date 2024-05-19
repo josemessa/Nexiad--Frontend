@@ -1,0 +1,105 @@
+.container-subscriptions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.subscription-plan {
+    color: white;
+    border-radius: 10px;
+    background: rgba( 201, 194, 194, 0.25 );
+    margin-top: 100px;
+    padding: 20px;
+    padding-left: 0px;
+}
+
+.inputs-add-subscriptions{
+    background: rgba( 201, 194, 194, 0.25 );
+}
+
+
+.container-subscription-name{
+    width: 180px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(238, 255, 0, 0.618);
+    border-radius: 5px;
+    margin-left: 65px;
+    margin-bottom: 20px;
+}
+
+.container-name-adress{
+    display: flex;
+    gap: 20px;
+}
+
+.subscription-name-subscritions{
+ 
+}
+
+.ul-subscription li{
+    padding-bottom: 10px;
+}
+
+.container-bottom-subscription{
+    display: block;
+}
+
+
+.bottom-add-subscription{
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.container-bottom-add-subscription{
+    display: flex;
+    justify-content: right;
+}
+
+.container-form-subscription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: rgba(255, 255, 255, 0.733);
+}
+
+.form-contain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.subscription-form{
+    background: rgba( 201, 194, 194, 0.25 );
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    height: 350px; 
+    
+}
+
+.send-bottom-form-subscriptions{
+width: 100px;
+background-color: rgba(255, 255, 0, 0.738);
+border-radius: 5px;
+margin-top: 20px;
+height: 30px;
+}
+
+.bottom-add-subscription{
+    padding: 10px;
+    font-weight: 700;
+    background: rgba(255, 255, 0, 0.738);
+    border-radius: 5px
+}
+
+.inputs-add-subscriptions{
+    margin-top: 20px;
+}

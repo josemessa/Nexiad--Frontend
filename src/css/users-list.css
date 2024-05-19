@@ -1,4 +1,5 @@
 .user {
+  color: white;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -7,21 +8,18 @@
   padding: 10px;
 
   overflow: hidden;
-  background-color: rgb(255, 255, 255);
+  background: rgba( 201, 194, 194, 0.25 );
+  backdrop-filter: blur( 1.5px );
+  -webkit-backdrop-filter: blur( 1.5px );
   cursor: pointer;
-  
+  color: white;
 }
 
 .aplication-box {
   overflow-x: hidden;
- max-height: 90vh; 
+  max-height: 100vh;
   width: 80vw;
-
- 
 }
-
-
-
 .link:active {
   color: white;
 }
@@ -32,31 +30,20 @@
 }
 
 .name {
-  color: black;
   width: 15%;
 }
 #subscription {
   margin-left: 30%;
   padding: 5px;
+  color: white;
 }
 
-.premium {
-  border-radius: 4px;
-  text-align: center;
-  background-color: #f9f45d;
-}
-.free {
-  border-radius: 4px;
-  text-align: center;
-  background-color: #00c61e;
+.subscription-name-list{
+  background: rgba(238, 255, 0, 0.618);
+  border-radius: 5px;
 }
 
-.basic {
-  display: flex;
-  background-color: #047cfc;
-  border-radius: 4px;
-  text-align: center;
-}
+
 
 @media (max-width: 868px) {
   .user div {

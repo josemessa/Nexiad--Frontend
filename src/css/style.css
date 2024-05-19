@@ -4,6 +4,9 @@
 @import url("users-list.css");
 @import url("admin-register.css");
 @import url("confirmation.css");
+@import url("patch-user.css");
+@import url("subscriptions.css");
+@import url("authorization.css");
 html {
   font-family: "Albert Sans", sans-serif;
 }
@@ -13,9 +16,12 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-button{
+button {
   cursor: pointer;
 }
-body{
+body {
   position: relative;
+}
+input {
+  padding: 0.5%;
 }

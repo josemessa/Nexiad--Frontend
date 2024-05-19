@@ -1,64 +1,78 @@
 .register-title {
   font-size: 40px;
   margin-inline: 5vw;
-  margin-block: 10vh;
+
+  color: white;
+}
+.register-container {
+  display: flex;
+  justify-content: center;
 }
 .register-box {
+  display: flex;
   text-decoration: solid;
-  margin-left: 5vw;
+  padding-block: 2%;
+  color: white;
+  font-weight: bold;
+  background-color: #2c2c2ccf;
+  backdrop-filter: blur(5px);
+  width: 60%;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  label {
+    padding-right: 15%;
+  }
+
   .user-form {
+    min-width: 80%;
     display: flex;
-    flex-direction: column;
-    gap: 2vh;
+    justify-content: space-around;
+    margin-inline: auto;
+    white-space: wrap;
+
+    gap: 5vh;
+
+    .inputs {
+      width: 50%;
+      margin-block: 2%;
+      input {
+        width: 100%;
+        margin-block: 2%;
+      }
+    }
+    .selectors {
+      display: flex;
+      width: 50%;
+      white-space: nowrap;
+      align-items: center;
+      margin-left: 10%;
+      div {
+        padding-bottom: 10%;
+      }
+    }
   }
 }
-.firstname-surname {
-  display: flex;
-  gap: 5vw;
-}
-#firstname {
-  width: 15vw;
-}
-#surname {
-  width: 15vw;
-}
-.adress-city {
-  display: flex;
-  gap: 5vw;
-}
-#adress {
-  width: 15vw;
-}
-.email-password {
-  display: flex;
-  gap: 5vw;
-  #email {
-    width: 15vw;
-  }
-  #password {
-    width: 10vw;
-  }
-}
-.role-box {
-  margin-top: 5vh;
-}
-.warning-box{
-}
+
 .admin-warning {
   max-width: 500px;
   color: red;
-  
+  white-space: wrap;
   font-weight: 700;
 }
 .register-submit {
   width: fit-content;
   padding: 5px;
+  margin-inline: auto;
   margin-top: 20px;
   background-color: yellow;
   border-radius: 5px;
   padding-block: 10px;
   font-weight: 700;
   cursor: pointer;
+}
+#register-submit {
+  width: fit-content;
+  margin-left: 1%;
 }
 @media (max-width: 800px) {
   .firstname-surname {

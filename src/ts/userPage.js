@@ -1,19 +1,30 @@
-import { getMyUserlistener } from "./events/tools";
+import {
+  closeSessionListener,
+  getMyUserlistener,
+  getallSubscriptionsListener,
+} from "./events/tools";
 
 export function userPage(userName, userSurname) {
   const pageElement = document.getElementById("app");
   pageElement.innerHTML = "";
   pageElement.innerHTML = `   
     <main>     
-      <div class="dashboard"> <img src="nexiatransp.png" alt="">
+      <div class="dashboard"> <img src="nexiatransp.png" alt=""><div>
       <h3 class="tool-user-list">
-          <a href="#" class="get-all-users" id="my-user"><div class="tool">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M17.997 18h-11.995l-.002-.623c0-1.259.1-1.986 1.588-2.33 1.684-.389 3.344-.736 2.545-2.209-2.366-4.363-.674-6.838 1.866-6.838 2.491 0 4.226 2.383 1.866 6.839-.775 1.464.826 1.812 2.545 2.209 1.49.344 1.589 1.072 1.589 2.333l-.002.619zm4.811-2.214c-1.29-.298-2.49-.559-1.909-1.657 1.769-3.342.469-5.129-1.4-5.129-1.265 0-2.248.817-2.248 2.324 0 3.903 2.268 1.77 2.246 6.676h4.501l.002-.463c0-.946-.074-1.493-1.192-1.751zm-22.806 2.214h4.501c-.021-4.906 2.246-2.772 2.246-6.676 0-1.507-.983-2.324-2.248-2.324-1.869 0-3.169 1.787-1.399 5.129.581 1.099-.619 1.359-1.909 1.657-1.119.258-1.193.805-1.193 1.751l.002.463z"/></svg>Mi Usuario</div></a></h3>
-      </div> 
-      <div class="app-space">
-      <div class="top-bar">
-          <h3>User: ${userName} ${userSurname}</h3>
-      </div>    
+      <a href="#" id="my-user"><div class="tool-users">Usuarios
+      <svg class="svg-users" height="40" viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m7.5 13a4.5 4.5 0 1 1 4.5-4.5 4.505 4.505 0 0 1 -4.5 4.5zm0-7a2.5 2.5 0 1 0 2.5 2.5 2.5 2.5 0 0 0 -2.5-2.5zm7.5 17v-.5a7.5 7.5 0 0 0 -15 0v.5a1 1 0 0 0 2 0v-.5a5.5 5.5 0 0 1 11 0v.5a1 1 0 0 0 2 0zm9-5a7 7 0 0 0 -11.667-5.217 1 1 0 1 0 1.334 1.49 5 5 0 0 1 8.333 3.727 1 1 0 0 0 2 0zm-6.5-9a4.5 4.5 0 1 1 4.5-4.5 4.505 4.505 0 0 1 -4.5 4.5zm0-7a2.5 2.5 0 1 0 2.5 2.5 2.5 2.5 0 0 0 -2.5-2.5z"/></svg></div></a></h3>
+            
+      <a href="#" id="type-subscriptions"><div class="tool"> Subscripciones
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px"  fill="white" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4 14.083c0-2.145-2.232-2.742-3.943-3.546-1.039-.54-.908-1.829.581-1.916.826-.05 1.675.195 2.443.465l.362-1.647c-.907-.276-1.719-.402-2.443-.421v-1.018h-1v1.067c-1.945.267-2.984 1.487-2.984 2.85 0 2.438 2.847 2.81 3.778 3.243 1.27.568 1.035 1.75-.114 2.011-.997.226-2.269-.168-3.225-.54l-.455 1.644c.894.462 1.965.708 3 .727v.998h1v-1.053c1.657-.232 3.002-1.146 3-2.864z"/></svg></div></a>
+                      </div>
+
+            <div class="user-info">
+              <h3>Usuario: ${userName} ${userSurname}</h3>
+              <a id="close-session">Cerrar sesion<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21h8v-2l1-1v4h-9v2l-10-3v-18l10-3v2h9v5l-1-1v-3h-8v18zm10.053-9l-3.293-3.293.707-.707 4.5 4.5-4.5 4.5-.707-.707 3.293-3.293h-9.053v-1h9.053z"/></svg></a> </div>   
+            </div> 
+
+      <div class="app-space">      
       
        <div class="aplication-box" id="aplication-box">
       <div class="welcome">
@@ -26,4 +37,6 @@ export function userPage(userName, userSurname) {
     </div>
    `;
   getMyUserlistener();
+  closeSessionListener();
+  getallSubscriptionsListener();
 }
